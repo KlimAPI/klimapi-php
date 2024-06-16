@@ -1,0 +1,23 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag: "${{ github.event.head_commit.message }}"
+          name: "KlimAPI Release ${{ github.event.head_commit.message }} 🚀"
+          body: "### This release has been automatically generated due to API changes or bug fixes. \n\n**All changes are 100% backwards compatible**, unless it's a new major version (X.0.0). \n\nFor the complete API changelog, please visit our [Changelog](https://klimapi.com/resources/docs#tag/Changelog)."
+          draft: false
+          prerelease: false
