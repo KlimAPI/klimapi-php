@@ -92,7 +92,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'KlimAPI/klimapi-php/2.0.2';
+    protected $userAgent = 'KlimAPI/klimapi-php/2.0.4';
 
     /**
      * Debug switch (default set to false)
@@ -425,7 +425,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    KlimAPI Version: v2' . PHP_EOL;
-        $report .= '    SDK Package Version: 2.0.2' . PHP_EOL;
+        $report .= '    SDK Package Version: 2.0.4' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

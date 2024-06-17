@@ -1,14 +1,12 @@
 {
     "name": "klimapi/php",
-    "version": "2.0.2",
+    "version": "2.0.4",
     "description": "This API offers you the possibility to calculate and offset emissions, create checkout links, get statistics and much more.",
     "keywords": [
-        "openapitools",
-        "openapi-generator",
-        "openapi",
         "php",
         "sdk",
         "rest",
+        "klimapi",
         "api"
     ],
     "homepage": "https://github.com/KlimAPI/klimapi-php",

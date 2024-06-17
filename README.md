@@ -69,6 +69,7 @@ Method | HTTP request | Description
 [**syncBulkStore**](docs/Api/KlimApi.md#syncbulkstore) | **POST** /stores/{store_ident}/sync/bulk | Sync multiple Products
 [**syncStore**](docs/Api/KlimApi.md#syncstore) | **POST** /stores/{store_ident}/sync | Sync a single Product
 
+
 ## Models
 
 - [AddWebhookRequest](docs/Model/AddWebhookRequest.md)
