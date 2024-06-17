@@ -6,7 +6,7 @@ For more information, please visit [https://klimapi.com/resources/docs](https://
 
 ## Installation
 
-`composer require klimapi/klimapi-php`
+`composer require klimapi/php`
 
 ## Setup new API Instance
 
