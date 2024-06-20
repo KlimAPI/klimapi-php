@@ -30,7 +30,7 @@ $order = $klimapi->pendingByCarbon($pendingByCarbonRequest);
 
 ```php
 $processOrder = new \KlimAPI\Model\ProcessOrder([
-'recipientName' => 'Test Customer'
+    'recipientName' => 'Test Customer'
 ]);
 $orderId = 'CA-0000-00000000';
 
