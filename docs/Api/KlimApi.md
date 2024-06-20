@@ -85,7 +85,7 @@ $result = $klimapi->calculate($calculateRequest);
 ## `calculateCart()`
 
 ```php
-calculateCart($storeIdent, $cartItem, $locale, $currency): \KlimAPI\Model\CartResult
+calculateCart($cartItem, $storeIdent, $locale, $currency): \KlimAPI\Model\CartResult
 ```
 
 Calculate
@@ -98,20 +98,20 @@ Calculate
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
-$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
 $cartItem = array(new \KlimAPI\Model\CartItem()); // \KlimAPI\Model\CartItem[]
+$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
 $locale = 'DE'; // string
 $currency = 'EUR'; // string
 
-$result = $klimapi->calculateCart($storeIdent, $cartItem, $locale, $currency);
+$result = $klimapi->calculateCart($cartItem, $storeIdent, $locale, $currency);
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **storeIdent** | **string**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident | |
 | **cartItem** | [**\KlimAPI\Model\CartItem[]**](../Model/CartItem.md)|  | |
+| **storeIdent** | **string**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident | |
 | **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
 | **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
 
@@ -500,7 +500,7 @@ $result = $klimapi->linkByCalculation($linkByCalculationRequest, $locale, $curre
 ## `linkByCarbon()`
 
 ```php
-linkByCarbon($locale, $currency, $linkByCarbonRequest): \KlimAPI\Model\CheckoutLinks
+linkByCarbon($linkByCarbonRequest, $locale, $currency): \KlimAPI\Model\CheckoutLinks
 ```
 
 By carbon
@@ -513,20 +513,20 @@ Get the compensation instantly by kilogram CO2e.
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
+$linkByCarbonRequest = new \KlimAPI\Model\LinkByCarbonRequest(); // \KlimAPI\Model\LinkByCarbonRequest
 $locale = 'DE'; // string
 $currency = 'EUR'; // string
-$linkByCarbonRequest = new \KlimAPI\Model\LinkByCarbonRequest(); // \KlimAPI\Model\LinkByCarbonRequest
 
-$result = $klimapi->linkByCarbon($locale, $currency, $linkByCarbonRequest);
+$result = $klimapi->linkByCarbon($linkByCarbonRequest, $locale, $currency);
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **linkByCarbonRequest** | [**\KlimAPI\Model\LinkByCarbonRequest**](../Model/LinkByCarbonRequest.md)|  | [optional] |
 | **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
 | **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
-| **linkByCarbonRequest** | [**\KlimAPI\Model\LinkByCarbonRequest**](../Model/LinkByCarbonRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -544,7 +544,7 @@ $result = $klimapi->linkByCarbon($locale, $currency, $linkByCarbonRequest);
 ## `linkByPrice()`
 
 ```php
-linkByPrice($locale, $currency, $linkByPriceRequest): \KlimAPI\Model\CheckoutLinks
+linkByPrice($linkByPriceRequest, $locale, $currency): \KlimAPI\Model\CheckoutLinks
 ```
 
 By price
@@ -557,20 +557,20 @@ Get the compensation instantly by price.
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
+$linkByPriceRequest = new \KlimAPI\Model\LinkByPriceRequest(); // \KlimAPI\Model\LinkByPriceRequest
 $locale = 'DE'; // string
 $currency = 'EUR'; // string
-$linkByPriceRequest = new \KlimAPI\Model\LinkByPriceRequest(); // \KlimAPI\Model\LinkByPriceRequest
 
-$result = $klimapi->linkByPrice($locale, $currency, $linkByPriceRequest);
+$result = $klimapi->linkByPrice($linkByPriceRequest, $locale, $currency);
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **linkByPriceRequest** | [**\KlimAPI\Model\LinkByPriceRequest**](../Model/LinkByPriceRequest.md)|  | [optional] |
 | **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
 | **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
-| **linkByPriceRequest** | [**\KlimAPI\Model\LinkByPriceRequest**](../Model/LinkByPriceRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -669,7 +669,7 @@ $result = $klimapi->orderByCalculation($orderByCalculationRequest, $locale, $cur
 ## `orderByCarbon()`
 
 ```php
-orderByCarbon($locale, $currency, $buyAmount): \KlimAPI\Model\Order
+orderByCarbon($buyAmount, $locale, $currency): \KlimAPI\Model\Order
 ```
 
 By carbon
@@ -682,20 +682,20 @@ Get the compensation instantly by kilogram CO2e. For this route the API key has 
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
+$buyAmount = new \KlimAPI\Model\BuyAmount(); // \KlimAPI\Model\BuyAmount
 $locale = 'DE'; // string
 $currency = 'EUR'; // string
-$buyAmount = new \KlimAPI\Model\BuyAmount(); // \KlimAPI\Model\BuyAmount
 
-$result = $klimapi->orderByCarbon($locale, $currency, $buyAmount);
+$result = $klimapi->orderByCarbon($buyAmount, $locale, $currency);
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **buyAmount** | [**\KlimAPI\Model\BuyAmount**](../Model/BuyAmount.md)|  | [optional] |
 | **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
 | **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
-| **buyAmount** | [**\KlimAPI\Model\BuyAmount**](../Model/BuyAmount.md)|  | [optional] |
 
 ### Return type
 
@@ -713,7 +713,7 @@ $result = $klimapi->orderByCarbon($locale, $currency, $buyAmount);
 ## `orderByPrice()`
 
 ```php
-orderByPrice($locale, $currency, $buyPrice): \KlimAPI\Model\Order
+orderByPrice($buyPrice, $locale, $currency): \KlimAPI\Model\Order
 ```
 
 By price
@@ -726,20 +726,20 @@ Get the compensation instantly by price. For this route the API key has no limit
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
+$buyPrice = new \KlimAPI\Model\BuyPrice(); // \KlimAPI\Model\BuyPrice
 $locale = 'DE'; // string
 $currency = 'EUR'; // string
-$buyPrice = new \KlimAPI\Model\BuyPrice(); // \KlimAPI\Model\BuyPrice
 
-$result = $klimapi->orderByPrice($locale, $currency, $buyPrice);
+$result = $klimapi->orderByPrice($buyPrice, $locale, $currency);
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **buyPrice** | [**\KlimAPI\Model\BuyPrice**](../Model/BuyPrice.md)|  | [optional] |
 | **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
 | **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
-| **buyPrice** | [**\KlimAPI\Model\BuyPrice**](../Model/BuyPrice.md)|  | [optional] |
 
 ### Return type
 
@@ -889,7 +889,7 @@ $result = $klimapi->pendingByPrice($pendingByPriceRequest, $locale, $currency);
 ## `process()`
 
 ```php
-process($orderId, $processOrder, $locale): \KlimAPI\Model\Order
+process($processOrder, $orderId, $locale): \KlimAPI\Model\Order
 ```
 
 Process pending Order
@@ -902,19 +902,19 @@ You accepted the given order. You may now show a confirmation or provide the lin
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
-$orderId = 'orderId_example'; // string | The order id specified in the Order
 $processOrder = new \KlimAPI\Model\ProcessOrder(); // \KlimAPI\Model\ProcessOrder
+$orderId = 'orderId_example'; // string | The order id specified in the Order
 $locale = 'DE'; // string
 
-$result = $klimapi->process($orderId, $processOrder, $locale);
+$result = $klimapi->process($processOrder, $orderId, $locale);
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **orderId** | **string**| The order id specified in the Order | |
 | **processOrder** | [**\KlimAPI\Model\ProcessOrder**](../Model/ProcessOrder.md)|  | |
+| **orderId** | **string**| The order id specified in the Order | |
 | **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
 
 ### Return type
@@ -933,7 +933,7 @@ $result = $klimapi->process($orderId, $processOrder, $locale);
 ## `processCart()`
 
 ```php
-processCart($storeIdent, $orderId, $processOrder, $locale): \KlimAPI\Model\Order
+processCart($processOrder, $storeIdent, $orderId, $locale): \KlimAPI\Model\Order
 ```
 
 Process cart
@@ -946,21 +946,21 @@ Process cart
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
+$processOrder = new \KlimAPI\Model\ProcessOrder(); // \KlimAPI\Model\ProcessOrder
 $storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
 $orderId = 'orderId_example'; // string | The order id specified in the Order
-$processOrder = new \KlimAPI\Model\ProcessOrder(); // \KlimAPI\Model\ProcessOrder
 $locale = 'DE'; // string
 
-$result = $klimapi->processCart($storeIdent, $orderId, $processOrder, $locale);
+$result = $klimapi->processCart($processOrder, $storeIdent, $orderId, $locale);
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **processOrder** | [**\KlimAPI\Model\ProcessOrder**](../Model/ProcessOrder.md)|  | |
 | **storeIdent** | **string**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident | |
 | **orderId** | **string**| The order id specified in the Order | |
-| **processOrder** | [**\KlimAPI\Model\ProcessOrder**](../Model/ProcessOrder.md)|  | |
 | **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
 
 ### Return type
@@ -1059,7 +1059,7 @@ void (empty response body)
 ## `syncBulkStore()`
 
 ```php
-syncBulkStore($storeIdent, $product)
+syncBulkStore($product, $storeIdent)
 ```
 
 Sync multiple Products
@@ -1072,18 +1072,18 @@ Use the method to sync multiple products from the given store to our database.
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
-$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
 $product = array(new \KlimAPI\Model\Product()); // \KlimAPI\Model\Product[]
+$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
 
-$klimapi->syncBulkStore($storeIdent, $product);
+$klimapi->syncBulkStore($product, $storeIdent);
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **storeIdent** | **string**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident | |
 | **product** | [**\KlimAPI\Model\Product[]**](../Model/Product.md)|  | |
+| **storeIdent** | **string**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident | |
 
 ### Return type
 
@@ -1101,7 +1101,7 @@ void (empty response body)
 ## `syncStore()`
 
 ```php
-syncStore($storeIdent, $product)
+syncStore($product, $storeIdent)
 ```
 
 Sync a single Product
@@ -1114,18 +1114,18 @@ Use the method to sync a single product from the given store to our database.
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
-$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
 $product = new \KlimAPI\Model\Product(); // \KlimAPI\Model\Product
+$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
 
-$klimapi->syncStore($storeIdent, $product);
+$klimapi->syncStore($product, $storeIdent);
 ```
 
 ### Parameters
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **storeIdent** | **string**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident | |
 | **product** | [**\KlimAPI\Model\Product**](../Model/Product.md)|  | |
+| **storeIdent** | **string**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident | |
 
 ### Return type
 

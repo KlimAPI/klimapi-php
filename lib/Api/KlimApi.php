@@ -749,8 +749,8 @@ class KlimApi
      *
      * Calculate
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\CartItem[] $cartItem cartItem (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $locale locale (optional, default to 'DE')
      * @param  string $currency currency (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateCart'] to see the possible values for this operation
@@ -759,9 +759,9 @@ class KlimApi
      * @throws \InvalidArgumentException
      * @return \KlimAPI\Model\CartResult
      */
-    public function calculateCart($storeIdent, $cartItem, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['calculateCart'][0])
+    public function calculateCart($cartItem, $storeIdent, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['calculateCart'][0])
     {
-        list($response) = $this->calculateCartWithHttpInfo($storeIdent, $cartItem, $locale, $currency, $contentType);
+        list($response) = $this->calculateCartWithHttpInfo($cartItem, $storeIdent, $locale, $currency, $contentType);
         return $response;
     }
 
@@ -770,8 +770,8 @@ class KlimApi
      *
      * Calculate
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\CartItem[] $cartItem (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateCart'] to see the possible values for this operation
@@ -780,9 +780,9 @@ class KlimApi
      * @throws \InvalidArgumentException
      * @return array of \KlimAPI\Model\CartResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function calculateCartWithHttpInfo($storeIdent, $cartItem, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['calculateCart'][0])
+    public function calculateCartWithHttpInfo($cartItem, $storeIdent, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['calculateCart'][0])
     {
-        $request = $this->calculateCartRequest($storeIdent, $cartItem, $locale, $currency, $contentType);
+        $request = $this->calculateCartRequest($cartItem, $storeIdent, $locale, $currency, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -897,8 +897,8 @@ class KlimApi
      *
      * Calculate
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\CartItem[] $cartItem (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateCart'] to see the possible values for this operation
@@ -906,9 +906,9 @@ class KlimApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function calculateCartAsync($storeIdent, $cartItem, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['calculateCart'][0])
+    public function calculateCartAsync($cartItem, $storeIdent, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['calculateCart'][0])
     {
-        return $this->calculateCartAsyncWithHttpInfo($storeIdent, $cartItem, $locale, $currency, $contentType)
+        return $this->calculateCartAsyncWithHttpInfo($cartItem, $storeIdent, $locale, $currency, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -921,8 +921,8 @@ class KlimApi
      *
      * Calculate
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\CartItem[] $cartItem (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateCart'] to see the possible values for this operation
@@ -930,10 +930,10 @@ class KlimApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function calculateCartAsyncWithHttpInfo($storeIdent, $cartItem, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['calculateCart'][0])
+    public function calculateCartAsyncWithHttpInfo($cartItem, $storeIdent, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['calculateCart'][0])
     {
         $returnType = '\KlimAPI\Model\CartResult';
-        $request = $this->calculateCartRequest($storeIdent, $cartItem, $locale, $currency, $contentType);
+        $request = $this->calculateCartRequest($cartItem, $storeIdent, $locale, $currency, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -974,8 +974,8 @@ class KlimApi
     /**
      * Create request for operation 'calculateCart'
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\CartItem[] $cartItem (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateCart'] to see the possible values for this operation
@@ -983,20 +983,20 @@ class KlimApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function calculateCartRequest($storeIdent, $cartItem, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['calculateCart'][0])
+    public function calculateCartRequest($cartItem, $storeIdent, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['calculateCart'][0])
     {
-
-        // verify the required parameter 'storeIdent' is set
-        if ($storeIdent === null || (is_array($storeIdent) && count($storeIdent) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $storeIdent when calling calculateCart'
-            );
-        }
 
         // verify the required parameter 'cartItem' is set
         if ($cartItem === null || (is_array($cartItem) && count($cartItem) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $cartItem when calling calculateCart'
+            );
+        }
+
+        // verify the required parameter 'storeIdent' is set
+        if ($storeIdent === null || (is_array($storeIdent) && count($storeIdent) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $storeIdent when calling calculateCart'
             );
         }
 
@@ -3925,18 +3925,18 @@ class KlimApi
      *
      * By carbon
      *
+     * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest linkByCarbonRequest (optional)
      * @param  string $locale locale (optional, default to 'DE')
      * @param  string $currency currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest linkByCarbonRequest (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCarbon'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \KlimAPI\Model\CheckoutLinks
      */
-    public function linkByCarbon($locale = 'DE', $currency = 'EUR', $linkByCarbonRequest = null, string $contentType = self::contentTypes['linkByCarbon'][0])
+    public function linkByCarbon($linkByCarbonRequest = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['linkByCarbon'][0])
     {
-        list($response) = $this->linkByCarbonWithHttpInfo($locale, $currency, $linkByCarbonRequest, $contentType);
+        list($response) = $this->linkByCarbonWithHttpInfo($linkByCarbonRequest, $locale, $currency, $contentType);
         return $response;
     }
 
@@ -3945,18 +3945,18 @@ class KlimApi
      *
      * By carbon
      *
+     * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCarbon'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \KlimAPI\Model\CheckoutLinks, HTTP status code, HTTP response headers (array of strings)
      */
-    public function linkByCarbonWithHttpInfo($locale = 'DE', $currency = 'EUR', $linkByCarbonRequest = null, string $contentType = self::contentTypes['linkByCarbon'][0])
+    public function linkByCarbonWithHttpInfo($linkByCarbonRequest = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['linkByCarbon'][0])
     {
-        $request = $this->linkByCarbonRequest($locale, $currency, $linkByCarbonRequest, $contentType);
+        $request = $this->linkByCarbonRequest($linkByCarbonRequest, $locale, $currency, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4071,17 +4071,17 @@ class KlimApi
      *
      * By carbon
      *
+     * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function linkByCarbonAsync($locale = 'DE', $currency = 'EUR', $linkByCarbonRequest = null, string $contentType = self::contentTypes['linkByCarbon'][0])
+    public function linkByCarbonAsync($linkByCarbonRequest = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['linkByCarbon'][0])
     {
-        return $this->linkByCarbonAsyncWithHttpInfo($locale, $currency, $linkByCarbonRequest, $contentType)
+        return $this->linkByCarbonAsyncWithHttpInfo($linkByCarbonRequest, $locale, $currency, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4094,18 +4094,18 @@ class KlimApi
      *
      * By carbon
      *
+     * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function linkByCarbonAsyncWithHttpInfo($locale = 'DE', $currency = 'EUR', $linkByCarbonRequest = null, string $contentType = self::contentTypes['linkByCarbon'][0])
+    public function linkByCarbonAsyncWithHttpInfo($linkByCarbonRequest = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['linkByCarbon'][0])
     {
         $returnType = '\KlimAPI\Model\CheckoutLinks';
-        $request = $this->linkByCarbonRequest($locale, $currency, $linkByCarbonRequest, $contentType);
+        $request = $this->linkByCarbonRequest($linkByCarbonRequest, $locale, $currency, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4146,15 +4146,15 @@ class KlimApi
     /**
      * Create request for operation 'linkByCarbon'
      *
+     * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function linkByCarbonRequest($locale = 'DE', $currency = 'EUR', $linkByCarbonRequest = null, string $contentType = self::contentTypes['linkByCarbon'][0])
+    public function linkByCarbonRequest($linkByCarbonRequest = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['linkByCarbon'][0])
     {
 
 
@@ -4250,18 +4250,18 @@ class KlimApi
      *
      * By price
      *
+     * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest linkByPriceRequest (optional)
      * @param  string $locale locale (optional, default to 'DE')
      * @param  string $currency currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest linkByPriceRequest (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByPrice'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \KlimAPI\Model\CheckoutLinks
      */
-    public function linkByPrice($locale = 'DE', $currency = 'EUR', $linkByPriceRequest = null, string $contentType = self::contentTypes['linkByPrice'][0])
+    public function linkByPrice($linkByPriceRequest = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['linkByPrice'][0])
     {
-        list($response) = $this->linkByPriceWithHttpInfo($locale, $currency, $linkByPriceRequest, $contentType);
+        list($response) = $this->linkByPriceWithHttpInfo($linkByPriceRequest, $locale, $currency, $contentType);
         return $response;
     }
 
@@ -4270,18 +4270,18 @@ class KlimApi
      *
      * By price
      *
+     * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByPrice'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \KlimAPI\Model\CheckoutLinks, HTTP status code, HTTP response headers (array of strings)
      */
-    public function linkByPriceWithHttpInfo($locale = 'DE', $currency = 'EUR', $linkByPriceRequest = null, string $contentType = self::contentTypes['linkByPrice'][0])
+    public function linkByPriceWithHttpInfo($linkByPriceRequest = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['linkByPrice'][0])
     {
-        $request = $this->linkByPriceRequest($locale, $currency, $linkByPriceRequest, $contentType);
+        $request = $this->linkByPriceRequest($linkByPriceRequest, $locale, $currency, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4396,17 +4396,17 @@ class KlimApi
      *
      * By price
      *
+     * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function linkByPriceAsync($locale = 'DE', $currency = 'EUR', $linkByPriceRequest = null, string $contentType = self::contentTypes['linkByPrice'][0])
+    public function linkByPriceAsync($linkByPriceRequest = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['linkByPrice'][0])
     {
-        return $this->linkByPriceAsyncWithHttpInfo($locale, $currency, $linkByPriceRequest, $contentType)
+        return $this->linkByPriceAsyncWithHttpInfo($linkByPriceRequest, $locale, $currency, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4419,18 +4419,18 @@ class KlimApi
      *
      * By price
      *
+     * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function linkByPriceAsyncWithHttpInfo($locale = 'DE', $currency = 'EUR', $linkByPriceRequest = null, string $contentType = self::contentTypes['linkByPrice'][0])
+    public function linkByPriceAsyncWithHttpInfo($linkByPriceRequest = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['linkByPrice'][0])
     {
         $returnType = '\KlimAPI\Model\CheckoutLinks';
-        $request = $this->linkByPriceRequest($locale, $currency, $linkByPriceRequest, $contentType);
+        $request = $this->linkByPriceRequest($linkByPriceRequest, $locale, $currency, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4471,15 +4471,15 @@ class KlimApi
     /**
      * Create request for operation 'linkByPrice'
      *
+     * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function linkByPriceRequest($locale = 'DE', $currency = 'EUR', $linkByPriceRequest = null, string $contentType = self::contentTypes['linkByPrice'][0])
+    public function linkByPriceRequest($linkByPriceRequest = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['linkByPrice'][0])
     {
 
 
@@ -5198,18 +5198,18 @@ class KlimApi
      *
      * By carbon
      *
+     * @param  \KlimAPI\Model\BuyAmount $buyAmount buyAmount (optional)
      * @param  string $locale locale (optional, default to 'DE')
      * @param  string $currency currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\BuyAmount $buyAmount buyAmount (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCarbon'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \KlimAPI\Model\Order
      */
-    public function orderByCarbon($locale = 'DE', $currency = 'EUR', $buyAmount = null, string $contentType = self::contentTypes['orderByCarbon'][0])
+    public function orderByCarbon($buyAmount = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['orderByCarbon'][0])
     {
-        list($response) = $this->orderByCarbonWithHttpInfo($locale, $currency, $buyAmount, $contentType);
+        list($response) = $this->orderByCarbonWithHttpInfo($buyAmount, $locale, $currency, $contentType);
         return $response;
     }
 
@@ -5218,18 +5218,18 @@ class KlimApi
      *
      * By carbon
      *
+     * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCarbon'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \KlimAPI\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderByCarbonWithHttpInfo($locale = 'DE', $currency = 'EUR', $buyAmount = null, string $contentType = self::contentTypes['orderByCarbon'][0])
+    public function orderByCarbonWithHttpInfo($buyAmount = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['orderByCarbon'][0])
     {
-        $request = $this->orderByCarbonRequest($locale, $currency, $buyAmount, $contentType);
+        $request = $this->orderByCarbonRequest($buyAmount, $locale, $currency, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5344,17 +5344,17 @@ class KlimApi
      *
      * By carbon
      *
+     * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderByCarbonAsync($locale = 'DE', $currency = 'EUR', $buyAmount = null, string $contentType = self::contentTypes['orderByCarbon'][0])
+    public function orderByCarbonAsync($buyAmount = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['orderByCarbon'][0])
     {
-        return $this->orderByCarbonAsyncWithHttpInfo($locale, $currency, $buyAmount, $contentType)
+        return $this->orderByCarbonAsyncWithHttpInfo($buyAmount, $locale, $currency, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5367,18 +5367,18 @@ class KlimApi
      *
      * By carbon
      *
+     * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderByCarbonAsyncWithHttpInfo($locale = 'DE', $currency = 'EUR', $buyAmount = null, string $contentType = self::contentTypes['orderByCarbon'][0])
+    public function orderByCarbonAsyncWithHttpInfo($buyAmount = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['orderByCarbon'][0])
     {
         $returnType = '\KlimAPI\Model\Order';
-        $request = $this->orderByCarbonRequest($locale, $currency, $buyAmount, $contentType);
+        $request = $this->orderByCarbonRequest($buyAmount, $locale, $currency, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5419,15 +5419,15 @@ class KlimApi
     /**
      * Create request for operation 'orderByCarbon'
      *
+     * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderByCarbonRequest($locale = 'DE', $currency = 'EUR', $buyAmount = null, string $contentType = self::contentTypes['orderByCarbon'][0])
+    public function orderByCarbonRequest($buyAmount = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['orderByCarbon'][0])
     {
 
 
@@ -5523,18 +5523,18 @@ class KlimApi
      *
      * By price
      *
+     * @param  \KlimAPI\Model\BuyPrice $buyPrice buyPrice (optional)
      * @param  string $locale locale (optional, default to 'DE')
      * @param  string $currency currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\BuyPrice $buyPrice buyPrice (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByPrice'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \KlimAPI\Model\Order
      */
-    public function orderByPrice($locale = 'DE', $currency = 'EUR', $buyPrice = null, string $contentType = self::contentTypes['orderByPrice'][0])
+    public function orderByPrice($buyPrice = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['orderByPrice'][0])
     {
-        list($response) = $this->orderByPriceWithHttpInfo($locale, $currency, $buyPrice, $contentType);
+        list($response) = $this->orderByPriceWithHttpInfo($buyPrice, $locale, $currency, $contentType);
         return $response;
     }
 
@@ -5543,18 +5543,18 @@ class KlimApi
      *
      * By price
      *
+     * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByPrice'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \KlimAPI\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderByPriceWithHttpInfo($locale = 'DE', $currency = 'EUR', $buyPrice = null, string $contentType = self::contentTypes['orderByPrice'][0])
+    public function orderByPriceWithHttpInfo($buyPrice = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['orderByPrice'][0])
     {
-        $request = $this->orderByPriceRequest($locale, $currency, $buyPrice, $contentType);
+        $request = $this->orderByPriceRequest($buyPrice, $locale, $currency, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5669,17 +5669,17 @@ class KlimApi
      *
      * By price
      *
+     * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderByPriceAsync($locale = 'DE', $currency = 'EUR', $buyPrice = null, string $contentType = self::contentTypes['orderByPrice'][0])
+    public function orderByPriceAsync($buyPrice = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['orderByPrice'][0])
     {
-        return $this->orderByPriceAsyncWithHttpInfo($locale, $currency, $buyPrice, $contentType)
+        return $this->orderByPriceAsyncWithHttpInfo($buyPrice, $locale, $currency, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5692,18 +5692,18 @@ class KlimApi
      *
      * By price
      *
+     * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderByPriceAsyncWithHttpInfo($locale = 'DE', $currency = 'EUR', $buyPrice = null, string $contentType = self::contentTypes['orderByPrice'][0])
+    public function orderByPriceAsyncWithHttpInfo($buyPrice = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['orderByPrice'][0])
     {
         $returnType = '\KlimAPI\Model\Order';
-        $request = $this->orderByPriceRequest($locale, $currency, $buyPrice, $contentType);
+        $request = $this->orderByPriceRequest($buyPrice, $locale, $currency, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5744,15 +5744,15 @@ class KlimApi
     /**
      * Create request for operation 'orderByPrice'
      *
+     * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $currency (optional, default to 'EUR')
-     * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderByPriceRequest($locale = 'DE', $currency = 'EUR', $buyPrice = null, string $contentType = self::contentTypes['orderByPrice'][0])
+    public function orderByPriceRequest($buyPrice = null, $locale = 'DE', $currency = 'EUR', string $contentType = self::contentTypes['orderByPrice'][0])
     {
 
 
@@ -6841,8 +6841,8 @@ class KlimApi
      *
      * Process pending Order
      *
-     * @param  string $orderId The order id specified in the Order (required)
      * @param  \KlimAPI\Model\ProcessOrder $processOrder processOrder (required)
+     * @param  string $orderId The order id specified in the Order (required)
      * @param  string $locale locale (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['process'] to see the possible values for this operation
      *
@@ -6850,9 +6850,9 @@ class KlimApi
      * @throws \InvalidArgumentException
      * @return \KlimAPI\Model\Order
      */
-    public function process($orderId, $processOrder, $locale = 'DE', string $contentType = self::contentTypes['process'][0])
+    public function process($processOrder, $orderId, $locale = 'DE', string $contentType = self::contentTypes['process'][0])
     {
-        list($response) = $this->processWithHttpInfo($orderId, $processOrder, $locale, $contentType);
+        list($response) = $this->processWithHttpInfo($processOrder, $orderId, $locale, $contentType);
         return $response;
     }
 
@@ -6861,8 +6861,8 @@ class KlimApi
      *
      * Process pending Order
      *
-     * @param  string $orderId The order id specified in the Order (required)
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
+     * @param  string $orderId The order id specified in the Order (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['process'] to see the possible values for this operation
      *
@@ -6870,9 +6870,9 @@ class KlimApi
      * @throws \InvalidArgumentException
      * @return array of \KlimAPI\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function processWithHttpInfo($orderId, $processOrder, $locale = 'DE', string $contentType = self::contentTypes['process'][0])
+    public function processWithHttpInfo($processOrder, $orderId, $locale = 'DE', string $contentType = self::contentTypes['process'][0])
     {
-        $request = $this->processRequest($orderId, $processOrder, $locale, $contentType);
+        $request = $this->processRequest($processOrder, $orderId, $locale, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6987,17 +6987,17 @@ class KlimApi
      *
      * Process pending Order
      *
-     * @param  string $orderId The order id specified in the Order (required)
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
+     * @param  string $orderId The order id specified in the Order (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['process'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function processAsync($orderId, $processOrder, $locale = 'DE', string $contentType = self::contentTypes['process'][0])
+    public function processAsync($processOrder, $orderId, $locale = 'DE', string $contentType = self::contentTypes['process'][0])
     {
-        return $this->processAsyncWithHttpInfo($orderId, $processOrder, $locale, $contentType)
+        return $this->processAsyncWithHttpInfo($processOrder, $orderId, $locale, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7010,18 +7010,18 @@ class KlimApi
      *
      * Process pending Order
      *
-     * @param  string $orderId The order id specified in the Order (required)
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
+     * @param  string $orderId The order id specified in the Order (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['process'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function processAsyncWithHttpInfo($orderId, $processOrder, $locale = 'DE', string $contentType = self::contentTypes['process'][0])
+    public function processAsyncWithHttpInfo($processOrder, $orderId, $locale = 'DE', string $contentType = self::contentTypes['process'][0])
     {
         $returnType = '\KlimAPI\Model\Order';
-        $request = $this->processRequest($orderId, $processOrder, $locale, $contentType);
+        $request = $this->processRequest($processOrder, $orderId, $locale, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7062,28 +7062,28 @@ class KlimApi
     /**
      * Create request for operation 'process'
      *
-     * @param  string $orderId The order id specified in the Order (required)
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
+     * @param  string $orderId The order id specified in the Order (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['process'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function processRequest($orderId, $processOrder, $locale = 'DE', string $contentType = self::contentTypes['process'][0])
+    public function processRequest($processOrder, $orderId, $locale = 'DE', string $contentType = self::contentTypes['process'][0])
     {
-
-        // verify the required parameter 'orderId' is set
-        if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $orderId when calling process'
-            );
-        }
 
         // verify the required parameter 'processOrder' is set
         if ($processOrder === null || (is_array($processOrder) && count($processOrder) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $processOrder when calling process'
+            );
+        }
+
+        // verify the required parameter 'orderId' is set
+        if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $orderId when calling process'
             );
         }
 
@@ -7182,9 +7182,9 @@ class KlimApi
      *
      * Process cart
      *
+     * @param  \KlimAPI\Model\ProcessOrder $processOrder processOrder (required)
      * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  \KlimAPI\Model\ProcessOrder $processOrder processOrder (required)
      * @param  string $locale locale (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['processCart'] to see the possible values for this operation
      *
@@ -7192,9 +7192,9 @@ class KlimApi
      * @throws \InvalidArgumentException
      * @return \KlimAPI\Model\Order
      */
-    public function processCart($storeIdent, $orderId, $processOrder, $locale = 'DE', string $contentType = self::contentTypes['processCart'][0])
+    public function processCart($processOrder, $storeIdent, $orderId, $locale = 'DE', string $contentType = self::contentTypes['processCart'][0])
     {
-        list($response) = $this->processCartWithHttpInfo($storeIdent, $orderId, $processOrder, $locale, $contentType);
+        list($response) = $this->processCartWithHttpInfo($processOrder, $storeIdent, $orderId, $locale, $contentType);
         return $response;
     }
 
@@ -7203,9 +7203,9 @@ class KlimApi
      *
      * Process cart
      *
+     * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['processCart'] to see the possible values for this operation
      *
@@ -7213,9 +7213,9 @@ class KlimApi
      * @throws \InvalidArgumentException
      * @return array of \KlimAPI\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function processCartWithHttpInfo($storeIdent, $orderId, $processOrder, $locale = 'DE', string $contentType = self::contentTypes['processCart'][0])
+    public function processCartWithHttpInfo($processOrder, $storeIdent, $orderId, $locale = 'DE', string $contentType = self::contentTypes['processCart'][0])
     {
-        $request = $this->processCartRequest($storeIdent, $orderId, $processOrder, $locale, $contentType);
+        $request = $this->processCartRequest($processOrder, $storeIdent, $orderId, $locale, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7330,18 +7330,18 @@ class KlimApi
      *
      * Process cart
      *
+     * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['processCart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function processCartAsync($storeIdent, $orderId, $processOrder, $locale = 'DE', string $contentType = self::contentTypes['processCart'][0])
+    public function processCartAsync($processOrder, $storeIdent, $orderId, $locale = 'DE', string $contentType = self::contentTypes['processCart'][0])
     {
-        return $this->processCartAsyncWithHttpInfo($storeIdent, $orderId, $processOrder, $locale, $contentType)
+        return $this->processCartAsyncWithHttpInfo($processOrder, $storeIdent, $orderId, $locale, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7354,19 +7354,19 @@ class KlimApi
      *
      * Process cart
      *
+     * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['processCart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function processCartAsyncWithHttpInfo($storeIdent, $orderId, $processOrder, $locale = 'DE', string $contentType = self::contentTypes['processCart'][0])
+    public function processCartAsyncWithHttpInfo($processOrder, $storeIdent, $orderId, $locale = 'DE', string $contentType = self::contentTypes['processCart'][0])
     {
         $returnType = '\KlimAPI\Model\Order';
-        $request = $this->processCartRequest($storeIdent, $orderId, $processOrder, $locale, $contentType);
+        $request = $this->processCartRequest($processOrder, $storeIdent, $orderId, $locale, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7407,17 +7407,24 @@ class KlimApi
     /**
      * Create request for operation 'processCart'
      *
+     * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $locale (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['processCart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function processCartRequest($storeIdent, $orderId, $processOrder, $locale = 'DE', string $contentType = self::contentTypes['processCart'][0])
+    public function processCartRequest($processOrder, $storeIdent, $orderId, $locale = 'DE', string $contentType = self::contentTypes['processCart'][0])
     {
+
+        // verify the required parameter 'processOrder' is set
+        if ($processOrder === null || (is_array($processOrder) && count($processOrder) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $processOrder when calling processCart'
+            );
+        }
 
         // verify the required parameter 'storeIdent' is set
         if ($storeIdent === null || (is_array($storeIdent) && count($storeIdent) === 0)) {
@@ -7430,13 +7437,6 @@ class KlimApi
         if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $orderId when calling processCart'
-            );
-        }
-
-        // verify the required parameter 'processOrder' is set
-        if ($processOrder === null || (is_array($processOrder) && count($processOrder) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $processOrder when calling processCart'
             );
         }
 
@@ -8010,17 +8010,17 @@ class KlimApi
      *
      * Sync multiple Products
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\Product[] $product product (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncBulkStore'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function syncBulkStore($storeIdent, $product, string $contentType = self::contentTypes['syncBulkStore'][0])
+    public function syncBulkStore($product, $storeIdent, string $contentType = self::contentTypes['syncBulkStore'][0])
     {
-        $this->syncBulkStoreWithHttpInfo($storeIdent, $product, $contentType);
+        $this->syncBulkStoreWithHttpInfo($product, $storeIdent, $contentType);
     }
 
     /**
@@ -8028,17 +8028,17 @@ class KlimApi
      *
      * Sync multiple Products
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\Product[] $product (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncBulkStore'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function syncBulkStoreWithHttpInfo($storeIdent, $product, string $contentType = self::contentTypes['syncBulkStore'][0])
+    public function syncBulkStoreWithHttpInfo($product, $storeIdent, string $contentType = self::contentTypes['syncBulkStore'][0])
     {
-        $request = $this->syncBulkStoreRequest($storeIdent, $product, $contentType);
+        $request = $this->syncBulkStoreRequest($product, $storeIdent, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8089,16 +8089,16 @@ class KlimApi
      *
      * Sync multiple Products
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\Product[] $product (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncBulkStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function syncBulkStoreAsync($storeIdent, $product, string $contentType = self::contentTypes['syncBulkStore'][0])
+    public function syncBulkStoreAsync($product, $storeIdent, string $contentType = self::contentTypes['syncBulkStore'][0])
     {
-        return $this->syncBulkStoreAsyncWithHttpInfo($storeIdent, $product, $contentType)
+        return $this->syncBulkStoreAsyncWithHttpInfo($product, $storeIdent, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8111,17 +8111,17 @@ class KlimApi
      *
      * Sync multiple Products
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\Product[] $product (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncBulkStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function syncBulkStoreAsyncWithHttpInfo($storeIdent, $product, string $contentType = self::contentTypes['syncBulkStore'][0])
+    public function syncBulkStoreAsyncWithHttpInfo($product, $storeIdent, string $contentType = self::contentTypes['syncBulkStore'][0])
     {
         $returnType = '';
-        $request = $this->syncBulkStoreRequest($storeIdent, $product, $contentType);
+        $request = $this->syncBulkStoreRequest($product, $storeIdent, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8149,27 +8149,27 @@ class KlimApi
     /**
      * Create request for operation 'syncBulkStore'
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\Product[] $product (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncBulkStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function syncBulkStoreRequest($storeIdent, $product, string $contentType = self::contentTypes['syncBulkStore'][0])
+    public function syncBulkStoreRequest($product, $storeIdent, string $contentType = self::contentTypes['syncBulkStore'][0])
     {
-
-        // verify the required parameter 'storeIdent' is set
-        if ($storeIdent === null || (is_array($storeIdent) && count($storeIdent) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $storeIdent when calling syncBulkStore'
-            );
-        }
 
         // verify the required parameter 'product' is set
         if ($product === null || (is_array($product) && count($product) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $product when calling syncBulkStore'
+            );
+        }
+
+        // verify the required parameter 'storeIdent' is set
+        if ($storeIdent === null || (is_array($storeIdent) && count($storeIdent) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $storeIdent when calling syncBulkStore'
             );
         }
 
@@ -8263,17 +8263,17 @@ class KlimApi
      *
      * Sync a single Product
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\Product $product product (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncStore'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function syncStore($storeIdent, $product, string $contentType = self::contentTypes['syncStore'][0])
+    public function syncStore($product, $storeIdent, string $contentType = self::contentTypes['syncStore'][0])
     {
-        $this->syncStoreWithHttpInfo($storeIdent, $product, $contentType);
+        $this->syncStoreWithHttpInfo($product, $storeIdent, $contentType);
     }
 
     /**
@@ -8281,17 +8281,17 @@ class KlimApi
      *
      * Sync a single Product
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\Product $product (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncStore'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function syncStoreWithHttpInfo($storeIdent, $product, string $contentType = self::contentTypes['syncStore'][0])
+    public function syncStoreWithHttpInfo($product, $storeIdent, string $contentType = self::contentTypes['syncStore'][0])
     {
-        $request = $this->syncStoreRequest($storeIdent, $product, $contentType);
+        $request = $this->syncStoreRequest($product, $storeIdent, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8342,16 +8342,16 @@ class KlimApi
      *
      * Sync a single Product
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\Product $product (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function syncStoreAsync($storeIdent, $product, string $contentType = self::contentTypes['syncStore'][0])
+    public function syncStoreAsync($product, $storeIdent, string $contentType = self::contentTypes['syncStore'][0])
     {
-        return $this->syncStoreAsyncWithHttpInfo($storeIdent, $product, $contentType)
+        return $this->syncStoreAsyncWithHttpInfo($product, $storeIdent, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8364,17 +8364,17 @@ class KlimApi
      *
      * Sync a single Product
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\Product $product (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function syncStoreAsyncWithHttpInfo($storeIdent, $product, string $contentType = self::contentTypes['syncStore'][0])
+    public function syncStoreAsyncWithHttpInfo($product, $storeIdent, string $contentType = self::contentTypes['syncStore'][0])
     {
         $returnType = '';
-        $request = $this->syncStoreRequest($storeIdent, $product, $contentType);
+        $request = $this->syncStoreRequest($product, $storeIdent, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8402,27 +8402,27 @@ class KlimApi
     /**
      * Create request for operation 'syncStore'
      *
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  \KlimAPI\Model\Product $product (required)
+     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function syncStoreRequest($storeIdent, $product, string $contentType = self::contentTypes['syncStore'][0])
+    public function syncStoreRequest($product, $storeIdent, string $contentType = self::contentTypes['syncStore'][0])
     {
-
-        // verify the required parameter 'storeIdent' is set
-        if ($storeIdent === null || (is_array($storeIdent) && count($storeIdent) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $storeIdent when calling syncStore'
-            );
-        }
 
         // verify the required parameter 'product' is set
         if ($product === null || (is_array($product) && count($product) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $product when calling syncStore'
+            );
+        }
+
+        // verify the required parameter 'storeIdent' is set
+        if ($storeIdent === null || (is_array($storeIdent) && count($storeIdent) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $storeIdent when calling syncStore'
             );
         }
 
