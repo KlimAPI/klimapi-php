@@ -248,7 +248,7 @@ $result = $klimapi->getMetrics($getMetricsRequest);
 ## `getOrder()`
 
 ```php
-getOrder($orderId, $locale): \KlimAPI\Model\Order[]
+getOrder($orderId, $locale): \KlimAPI\Model\Order
 ```
 
 Get Order
@@ -276,7 +276,7 @@ $result = $klimapi->getOrder($orderId, $locale);
 
 ### Return type
 
-[**\KlimAPI\Model\Order[]**](../Model/Order.md)
+[**\KlimAPI\Model\Order**](../Model/Order.md)
 
 ### HTTP request headers
 

@@ -2011,7 +2011,7 @@ class KlimApi
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \KlimAPI\Model\Order[]
+     * @return \KlimAPI\Model\Order
      */
     public function getOrder($orderId, $locale = 'DE', string $contentType = self::contentTypes['getOrder'][0])
     {
@@ -2030,7 +2030,7 @@ class KlimApi
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \KlimAPI\Model\Order[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \KlimAPI\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderWithHttpInfo($orderId, $locale = 'DE', string $contentType = self::contentTypes['getOrder'][0])
     {
@@ -2073,11 +2073,11 @@ class KlimApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\KlimAPI\Model\Order[]' === '\SplFileObject') {
+                    if ('\KlimAPI\Model\Order' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\KlimAPI\Model\Order[]' !== 'string') {
+                        if ('\KlimAPI\Model\Order' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2095,13 +2095,13 @@ class KlimApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\KlimAPI\Model\Order[]', []),
+                        ObjectSerializer::deserialize($content, '\KlimAPI\Model\Order', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\KlimAPI\Model\Order[]';
+            $returnType = '\KlimAPI\Model\Order';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2134,7 +2134,7 @@ class KlimApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\KlimAPI\Model\Order[]',
+                        '\KlimAPI\Model\Order',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2180,7 +2180,7 @@ class KlimApi
      */
     public function getOrderAsyncWithHttpInfo($orderId, $locale = 'DE', string $contentType = self::contentTypes['getOrder'][0])
     {
-        $returnType = '\KlimAPI\Model\Order[]';
+        $returnType = '\KlimAPI\Model\Order';
         $request = $this->getOrderRequest($orderId, $locale, $contentType);
 
         return $this->client
