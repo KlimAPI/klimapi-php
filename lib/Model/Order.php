@@ -58,7 +58,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => 'float',
         'currency' => 'string',
         'kgCO2e' => 'int',
-        'metadata' => 'array[]',
+        'metadata' => 'array<string,string>',
         'project' => '\KlimAPI\Model\Project',
         'recipient' => '\KlimAPI\Model\OrderRecipient'
     ];
@@ -779,7 +779,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metadata
      *
-     * @return array[]|null
+     * @return array<string,string>|null
      */
     public function getMetadata()
     {
@@ -789,7 +789,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metadata
      *
-     * @param array[]|null $metadata Add additional queryable information to the order as key-value pairs
+     * @param array<string,string>|null $metadata Add additional queryable information to the order as key-value pairs
      *
      * @return self
      */

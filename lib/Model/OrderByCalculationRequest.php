@@ -55,7 +55,7 @@ class OrderByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSer
         'recipientEmail' => 'string',
         'sendAt' => '\DateTime',
         'priceLimit' => 'float',
-        'metadata' => 'array[]',
+        'metadata' => 'array<string,string>',
         'fractionalDigits' => 'int'
     ];
 
@@ -434,7 +434,7 @@ class OrderByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets metadata
      *
-     * @return array[]|null
+     * @return array<string,string>|null
      */
     public function getMetadata()
     {
@@ -444,7 +444,7 @@ class OrderByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets metadata
      *
-     * @param array[]|null $metadata Add additional queryable information to the order as key-value pairs
+     * @param array<string,string>|null $metadata Add additional queryable information to the order as key-value pairs
      *
      * @return self
      */

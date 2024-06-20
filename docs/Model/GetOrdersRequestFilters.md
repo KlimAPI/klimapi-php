@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | **array[]** | Add additional queryable information to the order as key-value pairs | [optional]
+**metadata** | **array<string,string>** | Add additional queryable information to the order as key-value pairs | [optional]
 **status** | **string** | The status of the orders you want to receive | [optional] [default to 'processed']
 **recipientName** | **string** | The recipient name of the orders you want to receive | [optional]
 **recipientEmail** | **string** | The recipient email of the orders you want to receive | [optional]

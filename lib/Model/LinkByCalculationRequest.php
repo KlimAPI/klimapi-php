@@ -55,7 +55,7 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'successUrl' => 'string',
         'cancelUrl' => 'string',
         'orderCount' => 'int',
-        'metadata' => 'array[]',
+        'metadata' => 'array<string,string>',
         'fractionalDigits' => 'int'
     ];
 
@@ -447,7 +447,7 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets metadata
      *
-     * @return array[]|null
+     * @return array<string,string>|null
      */
     public function getMetadata()
     {
@@ -457,7 +457,7 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets metadata
      *
-     * @param array[]|null $metadata Add additional queryable information to the order as key-value pairs
+     * @param array<string,string>|null $metadata Add additional queryable information to the order as key-value pairs
      *
      * @return self
      */

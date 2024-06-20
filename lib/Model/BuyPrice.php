@@ -54,7 +54,7 @@ class BuyPrice implements ModelInterface, ArrayAccess, \JsonSerializable
         'recipientName' => 'string',
         'recipientEmail' => 'string',
         'sendAt' => '\DateTime',
-        'metadata' => 'array[]'
+        'metadata' => 'array<string,string>'
     ];
 
     /**
@@ -392,7 +392,7 @@ class BuyPrice implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metadata
      *
-     * @return array[]|null
+     * @return array<string,string>|null
      */
     public function getMetadata()
     {
@@ -402,7 +402,7 @@ class BuyPrice implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metadata
      *
-     * @param array[]|null $metadata Add additional queryable information to the order as key-value pairs
+     * @param array<string,string>|null $metadata Add additional queryable information to the order as key-value pairs
      *
      * @return self
      */
