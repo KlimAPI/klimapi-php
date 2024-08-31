@@ -52,18 +52,18 @@ Method | HTTP request | Description
 [**getPaymentLink**](docs/Api/KlimApi.md#getpaymentlink) | **GET** /orders/link/{payment_link_id} | Get Checkout Link
 [**getProject**](docs/Api/KlimApi.md#getproject) | **GET** /projects/{project_id} | Get Project
 [**getProjects**](docs/Api/KlimApi.md#getprojects) | **GET** /projects | Get all supported Projects
-[**linkByCalculation**](docs/Api/KlimApi.md#linkbycalculation) | **POST** /orders/link/calculate | By calculation
-[**linkByCarbon**](docs/Api/KlimApi.md#linkbycarbon) | **POST** /orders/link/carbon | By carbon
-[**linkByPrice**](docs/Api/KlimApi.md#linkbyprice) | **POST** /orders/link/price | By price
+[**linkByCalculation**](docs/Api/KlimApi.md#linkbycalculation) | **POST** /orders/link/calculate | By Calculation
+[**linkByCarbon**](docs/Api/KlimApi.md#linkbycarbon) | **POST** /orders/link/carbon | By Carbon
+[**linkByPrice**](docs/Api/KlimApi.md#linkbyprice) | **POST** /orders/link/price | By Price
 [**me**](docs/Api/KlimApi.md#me) | **GET** /me | Get Authenticated User
-[**orderByCalculation**](docs/Api/KlimApi.md#orderbycalculation) | **POST** /orders/process/calculate | By calculation
-[**orderByCarbon**](docs/Api/KlimApi.md#orderbycarbon) | **POST** /orders/process/carbon | By carbon
-[**orderByPrice**](docs/Api/KlimApi.md#orderbyprice) | **POST** /orders/process/price | By price
-[**pendingByCalculation**](docs/Api/KlimApi.md#pendingbycalculation) | **POST** /orders/pending/calculate | By calculation
-[**pendingByCarbon**](docs/Api/KlimApi.md#pendingbycarbon) | **POST** /orders/pending/carbon | By carbon
-[**pendingByPrice**](docs/Api/KlimApi.md#pendingbyprice) | **POST** /orders/pending/price | By price
-[**process**](docs/Api/KlimApi.md#process) | **POST** /orders/{order_id}/process | Process pending Order
-[**processCart**](docs/Api/KlimApi.md#processcart) | **POST** /stores/{store_ident}/cart/{order_id}/process | Process cart
+[**orderByCalculation**](docs/Api/KlimApi.md#orderbycalculation) | **POST** /orders/process/calculate | By Calculation
+[**orderByCarbon**](docs/Api/KlimApi.md#orderbycarbon) | **POST** /orders/process/carbon | By Carbon
+[**orderByPrice**](docs/Api/KlimApi.md#orderbyprice) | **POST** /orders/process/price | By Price
+[**pendingByCalculation**](docs/Api/KlimApi.md#pendingbycalculation) | **POST** /orders/pending/calculate | By Calculation
+[**pendingByCarbon**](docs/Api/KlimApi.md#pendingbycarbon) | **POST** /orders/pending/carbon | By Carbon
+[**pendingByPrice**](docs/Api/KlimApi.md#pendingbyprice) | **POST** /orders/pending/price | By Price
+[**process**](docs/Api/KlimApi.md#process) | **POST** /orders/{order_id}/process | Process Pending Order
+[**processCart**](docs/Api/KlimApi.md#processcart) | **POST** /stores/{store_ident}/cart/{order_id}/process | Process Cart
 [**refund**](docs/Api/KlimApi.md#refund) | **DELETE** /orders/{order_id}/refund | Refund Order
 [**removeWebhook**](docs/Api/KlimApi.md#removewebhook) | **DELETE** /webhooks/remove | Remove Webhook
 [**syncBulkStore**](docs/Api/KlimApi.md#syncbulkstore) | **POST** /stores/{store_ident}/sync/bulk | Sync multiple Products
@@ -73,6 +73,16 @@ Method | HTTP request | Description
 ## Models
 
 - [AddWebhookRequest](docs/Model/AddWebhookRequest.md)
+- [BioenergyAverageEnergy](docs/Model/BioenergyAverageEnergy.md)
+- [BioenergyAverageVolume](docs/Model/BioenergyAverageVolume.md)
+- [BioenergyAverageWeight](docs/Model/BioenergyAverageWeight.md)
+- [BioenergyBiofuelEnergy](docs/Model/BioenergyBiofuelEnergy.md)
+- [BioenergyBiofuelVolume](docs/Model/BioenergyBiofuelVolume.md)
+- [BioenergyBiofuelWeight](docs/Model/BioenergyBiofuelWeight.md)
+- [BioenergyBiogasEnergy](docs/Model/BioenergyBiogasEnergy.md)
+- [BioenergyBiogasWeight](docs/Model/BioenergyBiogasWeight.md)
+- [BioenergyBiomassEnergy](docs/Model/BioenergyBiomassEnergy.md)
+- [BioenergyBiomassWeight](docs/Model/BioenergyBiomassWeight.md)
 - [BuyAmount](docs/Model/BuyAmount.md)
 - [BuyPrice](docs/Model/BuyPrice.md)
 - [CalculateRequest](docs/Model/CalculateRequest.md)
@@ -88,12 +98,86 @@ Method | HTTP request | Description
 - [CheckoutLinkCalculated](docs/Model/CheckoutLinkCalculated.md)
 - [CheckoutLinks](docs/Model/CheckoutLinks.md)
 - [CheckoutLinksCalculated](docs/Model/CheckoutLinksCalculated.md)
+- [CloudComputingAverageCpuHour](docs/Model/CloudComputingAverageCpuHour.md)
+- [CloudComputingAverageGb](docs/Model/CloudComputingAverageGb.md)
+- [CloudComputingAverageGbHour](docs/Model/CloudComputingAverageGbHour.md)
+- [CloudComputingAverageTbHour](docs/Model/CloudComputingAverageTbHour.md)
+- [CloudComputingCpuCpuHour](docs/Model/CloudComputingCpuCpuHour.md)
+- [CloudComputingMemoryGbHour](docs/Model/CloudComputingMemoryGbHour.md)
+- [CloudComputingNetworkGb](docs/Model/CloudComputingNetworkGb.md)
+- [CloudComputingStorageTbHour](docs/Model/CloudComputingStorageTbHour.md)
+- [EnergyConsumptionAverageEnergy](docs/Model/EnergyConsumptionAverageEnergy.md)
+- [EnergyConsumptionByTypeEnergy](docs/Model/EnergyConsumptionByTypeEnergy.md)
+- [FoodAverageCurrency](docs/Model/FoodAverageCurrency.md)
+- [FoodBeveragesCurrency](docs/Model/FoodBeveragesCurrency.md)
+- [FoodDairyProductsCurrency](docs/Model/FoodDairyProductsCurrency.md)
+- [FoodFishProductsCurrency](docs/Model/FoodFishProductsCurrency.md)
+- [FoodFoodProductsNotElsewhereSpecifiedCurrency](docs/Model/FoodFoodProductsNotElsewhereSpecifiedCurrency.md)
+- [FoodMeatProductsBeefCurrency](docs/Model/FoodMeatProductsBeefCurrency.md)
+- [FoodMeatProductsNotElsewhereSpecifiedCurrency](docs/Model/FoodMeatProductsNotElsewhereSpecifiedCurrency.md)
+- [FoodMeatProductsPorkCurrency](docs/Model/FoodMeatProductsPorkCurrency.md)
+- [FoodMeatProductsPoultryCurrency](docs/Model/FoodMeatProductsPoultryCurrency.md)
+- [FoodProcessedRiceCurrency](docs/Model/FoodProcessedRiceCurrency.md)
+- [FoodSugarCurrency](docs/Model/FoodSugarCurrency.md)
+- [FoodTobaccoProductsCurrency](docs/Model/FoodTobaccoProductsCurrency.md)
+- [FoodVegetableOilsAndFatsCurrency](docs/Model/FoodVegetableOilsAndFatsCurrency.md)
+- [FreightingGoodsAverageDepartureAndDestination](docs/Model/FreightingGoodsAverageDepartureAndDestination.md)
+- [FreightingGoodsAverageDistance](docs/Model/FreightingGoodsAverageDistance.md)
+- [FreightingGoodsAverageWeightAndDistance](docs/Model/FreightingGoodsAverageWeightAndDistance.md)
+- [FreightingGoodsCargoShipDepartureAndDestination](docs/Model/FreightingGoodsCargoShipDepartureAndDestination.md)
+- [FreightingGoodsCargoShipWeightAndDistance](docs/Model/FreightingGoodsCargoShipWeightAndDistance.md)
+- [FreightingGoodsFreightFlightsDepartureAndDestination](docs/Model/FreightingGoodsFreightFlightsDepartureAndDestination.md)
+- [FreightingGoodsFreightFlightsWeightAndDistance](docs/Model/FreightingGoodsFreightFlightsWeightAndDistance.md)
+- [FreightingGoodsHgvAllDieselDepartureAndDestination](docs/Model/FreightingGoodsHgvAllDieselDepartureAndDestination.md)
+- [FreightingGoodsHgvAllDieselDistance](docs/Model/FreightingGoodsHgvAllDieselDistance.md)
+- [FreightingGoodsHgvAllDieselWeightAndDistance](docs/Model/FreightingGoodsHgvAllDieselWeightAndDistance.md)
+- [FreightingGoodsHgvRefrigeratedAllDieselDepartureAndDestination](docs/Model/FreightingGoodsHgvRefrigeratedAllDieselDepartureAndDestination.md)
+- [FreightingGoodsHgvRefrigeratedAllDieselDistance](docs/Model/FreightingGoodsHgvRefrigeratedAllDieselDistance.md)
+- [FreightingGoodsHgvRefrigeratedAllDieselWeightAndDistance](docs/Model/FreightingGoodsHgvRefrigeratedAllDieselWeightAndDistance.md)
+- [FreightingGoodsRailDepartureAndDestination](docs/Model/FreightingGoodsRailDepartureAndDestination.md)
+- [FreightingGoodsRailWeightAndDistance](docs/Model/FreightingGoodsRailWeightAndDistance.md)
+- [FreightingGoodsRoadDepartureAndDestination](docs/Model/FreightingGoodsRoadDepartureAndDestination.md)
+- [FreightingGoodsRoadWeightAndDistance](docs/Model/FreightingGoodsRoadWeightAndDistance.md)
+- [FreightingGoodsSeaTankerDepartureAndDestination](docs/Model/FreightingGoodsSeaTankerDepartureAndDestination.md)
+- [FreightingGoodsSeaTankerWeightAndDistance](docs/Model/FreightingGoodsSeaTankerWeightAndDistance.md)
+- [FreightingGoodsVansDepartureAndDestination](docs/Model/FreightingGoodsVansDepartureAndDestination.md)
+- [FreightingGoodsVansDistance](docs/Model/FreightingGoodsVansDistance.md)
+- [FreightingGoodsVansWeightAndDistance](docs/Model/FreightingGoodsVansWeightAndDistance.md)
+- [FuelsAverageVolume](docs/Model/FuelsAverageVolume.md)
+- [FuelsAverageWeight](docs/Model/FuelsAverageWeight.md)
+- [FuelsGaseousFuelsVolume](docs/Model/FuelsGaseousFuelsVolume.md)
+- [FuelsGaseousFuelsWeight](docs/Model/FuelsGaseousFuelsWeight.md)
+- [FuelsLiquidFuelsVolume](docs/Model/FuelsLiquidFuelsVolume.md)
+- [FuelsLiquidFuelsWeight](docs/Model/FuelsLiquidFuelsWeight.md)
+- [FuelsSolidFuelsWeight](docs/Model/FuelsSolidFuelsWeight.md)
 - [GetMetricsRequest](docs/Model/GetMetricsRequest.md)
 - [GetOrdersRequest](docs/Model/GetOrdersRequest.md)
 - [GetOrdersRequestFilters](docs/Model/GetOrdersRequestFilters.md)
+- [HeatAndSteamEnergy](docs/Model/HeatAndSteamEnergy.md)
+- [HomeworkingPerFteWorkingHour](docs/Model/HomeworkingPerFteWorkingHour.md)
+- [HotelStayRoomPerNight](docs/Model/HotelStayRoomPerNight.md)
+- [IndividualFactor](docs/Model/IndividualFactor.md)
+- [InfrastructureAverageCurrency](docs/Model/InfrastructureAverageCurrency.md)
+- [InfrastructureRealEstateCurrency](docs/Model/InfrastructureRealEstateCurrency.md)
+- [InvoiceDetails](docs/Model/InvoiceDetails.md)
+- [InvoiceDetailsAddress](docs/Model/InvoiceDetailsAddress.md)
+- [InvoiceDetailsTaxId](docs/Model/InvoiceDetailsTaxId.md)
 - [LinkByCalculationRequest](docs/Model/LinkByCalculationRequest.md)
 - [LinkByCarbonRequest](docs/Model/LinkByCarbonRequest.md)
 - [LinkByPriceRequest](docs/Model/LinkByPriceRequest.md)
+- [MaterialUseAverageCurrency](docs/Model/MaterialUseAverageCurrency.md)
+- [MaterialUseAverageWeight](docs/Model/MaterialUseAverageWeight.md)
+- [MaterialUseConstructionWeight](docs/Model/MaterialUseConstructionWeight.md)
+- [MaterialUseElectricalItemsWeight](docs/Model/MaterialUseElectricalItemsWeight.md)
+- [MaterialUseElectronicsCurrency](docs/Model/MaterialUseElectronicsCurrency.md)
+- [MaterialUseFurnitureCurrency](docs/Model/MaterialUseFurnitureCurrency.md)
+- [MaterialUseMetalWeight](docs/Model/MaterialUseMetalWeight.md)
+- [MaterialUseOrganicWeight](docs/Model/MaterialUseOrganicWeight.md)
+- [MaterialUseOtherWeight](docs/Model/MaterialUseOtherWeight.md)
+- [MaterialUsePaperProductsCurrency](docs/Model/MaterialUsePaperProductsCurrency.md)
+- [MaterialUsePaperWeight](docs/Model/MaterialUsePaperWeight.md)
+- [MaterialUsePlasticWeight](docs/Model/MaterialUsePlasticWeight.md)
+- [MaterialUseTextilesCurrency](docs/Model/MaterialUseTextilesCurrency.md)
 - [MetadataOrders](docs/Model/MetadataOrders.md)
 - [Order](docs/Model/Order.md)
 - [OrderByCalculationRequest](docs/Model/OrderByCalculationRequest.md)
@@ -101,6 +185,7 @@ Method | HTTP request | Description
 - [OrderMetrics](docs/Model/OrderMetrics.md)
 - [OrderRecipient](docs/Model/OrderRecipient.md)
 - [PendingByCalculationRequest](docs/Model/PendingByCalculationRequest.md)
+- [PendingByCalculationRequestCalculationOptionsInner](docs/Model/PendingByCalculationRequestCalculationOptionsInner.md)
 - [PendingByCarbonRequest](docs/Model/PendingByCarbonRequest.md)
 - [PendingByPriceRequest](docs/Model/PendingByPriceRequest.md)
 - [PendingOrder](docs/Model/PendingOrder.md)
@@ -110,3 +195,40 @@ Method | HTTP request | Description
 - [ProcessOrder](docs/Model/ProcessOrder.md)
 - [Product](docs/Model/Product.md)
 - [Project](docs/Model/Project.md)
+- [TravelAirAverageDepartureAndDestination](docs/Model/TravelAirAverageDepartureAndDestination.md)
+- [TravelAirAveragePassengerDistance](docs/Model/TravelAirAveragePassengerDistance.md)
+- [TravelAirFlightsDepartureAndDestination](docs/Model/TravelAirFlightsDepartureAndDestination.md)
+- [TravelAirFlightsPassengerDistance](docs/Model/TravelAirFlightsPassengerDistance.md)
+- [TravelLandAverageDepartureAndDestination](docs/Model/TravelLandAverageDepartureAndDestination.md)
+- [TravelLandAverageDistance](docs/Model/TravelLandAverageDistance.md)
+- [TravelLandAveragePassengerDistance](docs/Model/TravelLandAveragePassengerDistance.md)
+- [TravelLandBusDepartureAndDestination](docs/Model/TravelLandBusDepartureAndDestination.md)
+- [TravelLandBusPassengerDistance](docs/Model/TravelLandBusPassengerDistance.md)
+- [TravelLandCarsByMarketSegmentDepartureAndDestination](docs/Model/TravelLandCarsByMarketSegmentDepartureAndDestination.md)
+- [TravelLandCarsByMarketSegmentDistance](docs/Model/TravelLandCarsByMarketSegmentDistance.md)
+- [TravelLandCarsBySizeDepartureAndDestination](docs/Model/TravelLandCarsBySizeDepartureAndDestination.md)
+- [TravelLandCarsBySizeDistance](docs/Model/TravelLandCarsBySizeDistance.md)
+- [TravelLandFootBikeDepartureAndDestination](docs/Model/TravelLandFootBikeDepartureAndDestination.md)
+- [TravelLandFootBikePassengerDistance](docs/Model/TravelLandFootBikePassengerDistance.md)
+- [TravelLandMotorbikeDepartureAndDestination](docs/Model/TravelLandMotorbikeDepartureAndDestination.md)
+- [TravelLandMotorbikeDistance](docs/Model/TravelLandMotorbikeDistance.md)
+- [TravelLandRailDepartureAndDestination](docs/Model/TravelLandRailDepartureAndDestination.md)
+- [TravelLandRailPassengerDistance](docs/Model/TravelLandRailPassengerDistance.md)
+- [TravelLandTaxisDepartureAndDestination](docs/Model/TravelLandTaxisDepartureAndDestination.md)
+- [TravelLandTaxisDistance](docs/Model/TravelLandTaxisDistance.md)
+- [TravelLandTaxisPassengerDistance](docs/Model/TravelLandTaxisPassengerDistance.md)
+- [TravelSeaAverageDepartureAndDestination](docs/Model/TravelSeaAverageDepartureAndDestination.md)
+- [TravelSeaAveragePassengerDistance](docs/Model/TravelSeaAveragePassengerDistance.md)
+- [TravelSeaCruiseDays](docs/Model/TravelSeaCruiseDays.md)
+- [TravelSeaFerryDepartureAndDestination](docs/Model/TravelSeaFerryDepartureAndDestination.md)
+- [TravelSeaFerryPassengerDistance](docs/Model/TravelSeaFerryPassengerDistance.md)
+- [WasteDisposalAverageWeight](docs/Model/WasteDisposalAverageWeight.md)
+- [WasteDisposalConstructionWeight](docs/Model/WasteDisposalConstructionWeight.md)
+- [WasteDisposalElectricalItemsWeight](docs/Model/WasteDisposalElectricalItemsWeight.md)
+- [WasteDisposalMetalWeight](docs/Model/WasteDisposalMetalWeight.md)
+- [WasteDisposalOtherWeight](docs/Model/WasteDisposalOtherWeight.md)
+- [WasteDisposalPaperWeight](docs/Model/WasteDisposalPaperWeight.md)
+- [WasteDisposalPlasticWeight](docs/Model/WasteDisposalPlasticWeight.md)
+- [WasteDisposalRefuseWeight](docs/Model/WasteDisposalRefuseWeight.md)
+- [WaterSupplyVolume](docs/Model/WaterSupplyVolume.md)
+- [WaterTreatmentVolume](docs/Model/WaterTreatmentVolume.md)

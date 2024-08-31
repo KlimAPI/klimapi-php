@@ -28,6 +28,7 @@ use \KlimAPI\ObjectSerializer;
  * Product Class Doc Comment
  *
  * @category Class
+ * @description A specific product element
  * @package  KlimAPI
  * @author   KlimAPI Team
  * @link     https://klimapi.com

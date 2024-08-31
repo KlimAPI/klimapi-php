@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **certificateUrl** | **string** | When payment_received is true, the url to the certificate will be given. | [optional]
 **certificatePdf** | **string** | When payment_received is true, the url to the certificate pdf will be given. | [optional]
 **orderId** | **string** | The id of the order created for the checkout link. | [optional]
-**kgCO2e** | **int** | The amount of kg CO&lt;sub&gt;2&lt;/sub&gt;e. | [optional]
+**kgCO2e** | **int** | The amount of kg CO<sub>2</sub>e. | [optional]
 **price** | **float** | The total of the compensation in your given currency **incl. VAT**. | [optional]
 **currency** | **string** |  | [optional]
 **paymentReceived** | **string** | This indicates if the order via the checkout link is already fulfilled or not. | [optional]

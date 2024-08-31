@@ -50,7 +50,7 @@ class PendingByCalculationRequest implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'calculationOptions' => 'mixed[]',
+        'calculationOptions' => '\KlimAPI\Model\PendingByCalculationRequestCalculationOptionsInner[]',
         'orderCount' => 'int',
         'metadata' => 'array<string,string>',
         'fractionalDigits' => 'int'
@@ -277,7 +277,7 @@ class PendingByCalculationRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets calculationOptions
      *
-     * @return mixed[]
+     * @return \KlimAPI\Model\PendingByCalculationRequestCalculationOptionsInner[]
      */
     public function getCalculationOptions()
     {
@@ -287,7 +287,7 @@ class PendingByCalculationRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets calculationOptions
      *
-     * @param mixed[] $calculationOptions An Array of [Calculation Options](/resources/factors).
+     * @param \KlimAPI\Model\PendingByCalculationRequestCalculationOptionsInner[] $calculationOptions An Array of [Calculation Options](https://klimapi.com/resources/factors). See the full list of supported options [here](https://klimapi.com/resources/factors).
      *
      * @return self
      */

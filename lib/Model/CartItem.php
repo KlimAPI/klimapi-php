@@ -28,6 +28,7 @@ use \KlimAPI\ObjectSerializer;
  * CartItem Class Doc Comment
  *
  * @category Class
+ * @description An item in the cart of a specific customer
  * @package  KlimAPI
  * @author   KlimAPI Team
  * @link     https://klimapi.com

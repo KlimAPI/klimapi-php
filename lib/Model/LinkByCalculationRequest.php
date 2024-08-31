@@ -50,13 +50,14 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'calculationOptions' => 'mixed[]',
+        'calculationOptions' => '\KlimAPI\Model\PendingByCalculationRequestCalculationOptionsInner[]',
         'changeAllowed' => 'bool',
         'successUrl' => 'string',
         'cancelUrl' => 'string',
         'orderCount' => 'int',
         'metadata' => 'array<string,string>',
-        'fractionalDigits' => 'int'
+        'fractionalDigits' => 'int',
+        'paymentType' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'cancelUrl' => null,
         'orderCount' => null,
         'metadata' => null,
-        'fractionalDigits' => null
+        'fractionalDigits' => null,
+        'paymentType' => null
     ];
 
     /**
@@ -88,7 +90,8 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'cancelUrl' => false,
         'orderCount' => false,
         'metadata' => false,
-        'fractionalDigits' => false
+        'fractionalDigits' => false,
+        'paymentType' => false
     ];
 
     /**
@@ -145,7 +148,8 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'cancelUrl' => 'cancel_url',
         'orderCount' => 'order_count',
         'metadata' => 'metadata',
-        'fractionalDigits' => 'fractional_digits'
+        'fractionalDigits' => 'fractional_digits',
+        'paymentType' => 'payment_type'
     ];
 
     /**
@@ -160,7 +164,8 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'cancelUrl' => 'setCancelUrl',
         'orderCount' => 'setOrderCount',
         'metadata' => 'setMetadata',
-        'fractionalDigits' => 'setFractionalDigits'
+        'fractionalDigits' => 'setFractionalDigits',
+        'paymentType' => 'setPaymentType'
     ];
 
     /**
@@ -175,7 +180,8 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'cancelUrl' => 'getCancelUrl',
         'orderCount' => 'getOrderCount',
         'metadata' => 'getMetadata',
-        'fractionalDigits' => 'getFractionalDigits'
+        'fractionalDigits' => 'getFractionalDigits',
+        'paymentType' => 'getPaymentType'
     ];
 
     /**
@@ -219,6 +225,21 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
         return self::$openAPIModelName;
     }
 
+    public const PAYMENT_TYPE__DEFAULT = 'default';
+    public const PAYMENT_TYPE_INVOICE = 'invoice';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPaymentTypeAllowableValues()
+    {
+        return [
+            self::PAYMENT_TYPE__DEFAULT,
+            self::PAYMENT_TYPE_INVOICE,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -242,6 +263,7 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('orderCount', $data ?? [], 1);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('fractionalDigits', $data ?? [], 2);
+        $this->setIfExists('paymentType', $data ?? [], 'default');
     }
 
     /**
@@ -286,6 +308,15 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "invalid value for 'fractionalDigits', must be bigger than or equal to 0.";
         }
 
+        $allowedValues = $this->getPaymentTypeAllowableValues();
+        if (!is_null($this->container['paymentType']) && !in_array($this->container['paymentType'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'paymentType', must be one of '%s'",
+                $this->container['paymentType'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -304,7 +335,7 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets calculationOptions
      *
-     * @return mixed[]
+     * @return \KlimAPI\Model\PendingByCalculationRequestCalculationOptionsInner[]
      */
     public function getCalculationOptions()
     {
@@ -314,7 +345,7 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets calculationOptions
      *
-     * @param mixed[] $calculationOptions An Array of [Calculation Options](/resources/factors).
+     * @param \KlimAPI\Model\PendingByCalculationRequestCalculationOptionsInner[] $calculationOptions An Array of [Calculation Options](https://klimapi.com/resources/factors). See the full list of supported options [here](https://klimapi.com/resources/factors).
      *
      * @return self
      */
@@ -499,6 +530,43 @@ class LinkByCalculationRequest implements ModelInterface, ArrayAccess, \JsonSeri
         }
 
         $this->container['fractionalDigits'] = $fractionalDigits;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentType
+     *
+     * @return string|null
+     */
+    public function getPaymentType()
+    {
+        return $this->container['paymentType'];
+    }
+
+    /**
+     * Sets paymentType
+     *
+     * @param string|null $paymentType With `default` we will automatically provide payment methods based on the customers location, use `invoice` to enable payment by invoice for the given link. Please note that `invoice` bank transfer is only available if **X-CURRENCY** is set to `EUR`. The invoice can always be paid by card.
+     *
+     * @return self
+     */
+    public function setPaymentType($paymentType)
+    {
+        if (is_null($paymentType)) {
+            throw new \InvalidArgumentException('non-nullable paymentType cannot be null');
+        }
+        $allowedValues = $this->getPaymentTypeAllowableValues();
+        if (!in_array($paymentType, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'paymentType', must be one of '%s'",
+                    $paymentType,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['paymentType'] = $paymentType;
 
         return $this;
     }

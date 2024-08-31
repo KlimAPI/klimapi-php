@@ -438,7 +438,7 @@ class KlimApi
      *
      * Calculate
      *
-     * @param  \KlimAPI\Model\CalculateRequest $calculateRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  \KlimAPI\Model\CalculateRequest $calculateRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculate'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -456,7 +456,7 @@ class KlimApi
      *
      * Calculate
      *
-     * @param  \KlimAPI\Model\CalculateRequest $calculateRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  \KlimAPI\Model\CalculateRequest $calculateRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculate'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -580,7 +580,7 @@ class KlimApi
      *
      * Calculate
      *
-     * @param  \KlimAPI\Model\CalculateRequest $calculateRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  \KlimAPI\Model\CalculateRequest $calculateRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -601,7 +601,7 @@ class KlimApi
      *
      * Calculate
      *
-     * @param  \KlimAPI\Model\CalculateRequest $calculateRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  \KlimAPI\Model\CalculateRequest $calculateRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -651,7 +651,7 @@ class KlimApi
     /**
      * Create request for operation 'calculate'
      *
-     * @param  \KlimAPI\Model\CalculateRequest $calculateRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  \KlimAPI\Model\CalculateRequest $calculateRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -750,9 +750,9 @@ class KlimApi
      * Calculate
      *
      * @param  \KlimAPI\Model\CartItem[] $cartItem cartItem (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
-     * @param  string $locale locale (optional, default to 'DE')
-     * @param  string $currency currency (optional, default to 'EUR')
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateCart'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -771,9 +771,9 @@ class KlimApi
      * Calculate
      *
      * @param  \KlimAPI\Model\CartItem[] $cartItem (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateCart'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -898,9 +898,9 @@ class KlimApi
      * Calculate
      *
      * @param  \KlimAPI\Model\CartItem[] $cartItem (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateCart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -922,9 +922,9 @@ class KlimApi
      * Calculate
      *
      * @param  \KlimAPI\Model\CartItem[] $cartItem (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateCart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -975,9 +975,9 @@ class KlimApi
      * Create request for operation 'calculateCart'
      *
      * @param  \KlimAPI\Model\CartItem[] $cartItem (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateCart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1100,7 +1100,7 @@ class KlimApi
      *
      * Get all Categories
      *
-     * @param  string $locale locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategories'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1118,7 +1118,7 @@ class KlimApi
      *
      * Get all Categories
      *
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategories'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1242,7 +1242,7 @@ class KlimApi
      *
      * Get all Categories
      *
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategories'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1263,7 +1263,7 @@ class KlimApi
      *
      * Get all Categories
      *
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategories'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1313,7 +1313,7 @@ class KlimApi
     /**
      * Create request for operation 'getCategories'
      *
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategories'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2006,7 +2006,7 @@ class KlimApi
      * Get Order
      *
      * @param  string $orderId You can get the order_id from several endpoints, for example when creating an Order. (required)
-     * @param  string $locale locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrder'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2025,7 +2025,7 @@ class KlimApi
      * Get Order
      *
      * @param  string $orderId You can get the order_id from several endpoints, for example when creating an Order. (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrder'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2150,7 +2150,7 @@ class KlimApi
      * Get Order
      *
      * @param  string $orderId You can get the order_id from several endpoints, for example when creating an Order. (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2172,7 +2172,7 @@ class KlimApi
      * Get Order
      *
      * @param  string $orderId You can get the order_id from several endpoints, for example when creating an Order. (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2223,7 +2223,7 @@ class KlimApi
      * Create request for operation 'getOrder'
      *
      * @param  string $orderId You can get the order_id from several endpoints, for example when creating an Order. (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2328,7 +2328,7 @@ class KlimApi
      * Get Orders
      *
      * @param  \KlimAPI\Model\GetOrdersRequest $getOrdersRequest  (required)
-     * @param  string $locale locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrders'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2347,7 +2347,7 @@ class KlimApi
      * Get Orders
      *
      * @param  \KlimAPI\Model\GetOrdersRequest $getOrdersRequest  (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrders'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2472,7 +2472,7 @@ class KlimApi
      * Get Orders
      *
      * @param  \KlimAPI\Model\GetOrdersRequest $getOrdersRequest  (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2494,7 +2494,7 @@ class KlimApi
      * Get Orders
      *
      * @param  \KlimAPI\Model\GetOrdersRequest $getOrdersRequest  (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2545,7 +2545,7 @@ class KlimApi
      * Create request for operation 'getOrders'
      *
      * @param  \KlimAPI\Model\GetOrdersRequest $getOrdersRequest  (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2648,8 +2648,8 @@ class KlimApi
      *
      * Get Checkout Link
      *
-     * @param  string $paymentLinkId paymentLinkId (required)
-     * @param  string $locale locale (optional, default to 'DE')
+     * @param  string $paymentLinkId The identifier of the checkout link that you want to be returned. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentLink'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2667,8 +2667,8 @@ class KlimApi
      *
      * Get Checkout Link
      *
-     * @param  string $paymentLinkId (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $paymentLinkId The identifier of the checkout link that you want to be returned. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentLink'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2792,8 +2792,8 @@ class KlimApi
      *
      * Get Checkout Link
      *
-     * @param  string $paymentLinkId (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $paymentLinkId The identifier of the checkout link that you want to be returned. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentLink'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2814,8 +2814,8 @@ class KlimApi
      *
      * Get Checkout Link
      *
-     * @param  string $paymentLinkId (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $paymentLinkId The identifier of the checkout link that you want to be returned. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentLink'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2865,8 +2865,8 @@ class KlimApi
     /**
      * Create request for operation 'getPaymentLink'
      *
-     * @param  string $paymentLinkId (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $paymentLinkId The identifier of the checkout link that you want to be returned. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentLink'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2971,7 +2971,7 @@ class KlimApi
      * Get Project
      *
      * @param  string $projectId You can get the project_id from several endpoints, for example when creating an Order. (required)
-     * @param  string $locale locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProject'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2990,7 +2990,7 @@ class KlimApi
      * Get Project
      *
      * @param  string $projectId You can get the project_id from several endpoints, for example when creating an Order. (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProject'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3115,7 +3115,7 @@ class KlimApi
      * Get Project
      *
      * @param  string $projectId You can get the project_id from several endpoints, for example when creating an Order. (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProject'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3137,7 +3137,7 @@ class KlimApi
      * Get Project
      *
      * @param  string $projectId You can get the project_id from several endpoints, for example when creating an Order. (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProject'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3188,7 +3188,7 @@ class KlimApi
      * Create request for operation 'getProject'
      *
      * @param  string $projectId You can get the project_id from several endpoints, for example when creating an Order. (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProject'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3292,7 +3292,7 @@ class KlimApi
      *
      * Get all supported Projects
      *
-     * @param  string $locale locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProjects'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3310,7 +3310,7 @@ class KlimApi
      *
      * Get all supported Projects
      *
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProjects'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3434,7 +3434,7 @@ class KlimApi
      *
      * Get all supported Projects
      *
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProjects'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3455,7 +3455,7 @@ class KlimApi
      *
      * Get all supported Projects
      *
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProjects'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3505,7 +3505,7 @@ class KlimApi
     /**
      * Create request for operation 'getProjects'
      *
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProjects'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3592,11 +3592,11 @@ class KlimApi
     /**
      * Operation linkByCalculation
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\LinkByCalculationRequest $linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale locale (optional, default to 'DE')
-     * @param  string $currency currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\LinkByCalculationRequest $linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCalculation'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3612,11 +3612,11 @@ class KlimApi
     /**
      * Operation linkByCalculationWithHttpInfo
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\LinkByCalculationRequest $linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\LinkByCalculationRequest $linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCalculation'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3738,11 +3738,11 @@ class KlimApi
     /**
      * Operation linkByCalculationAsync
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\LinkByCalculationRequest $linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\LinkByCalculationRequest $linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCalculation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3761,11 +3761,11 @@ class KlimApi
     /**
      * Operation linkByCalculationAsyncWithHttpInfo
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\LinkByCalculationRequest $linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\LinkByCalculationRequest $linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCalculation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3815,9 +3815,9 @@ class KlimApi
     /**
      * Create request for operation 'linkByCalculation'
      *
-     * @param  \KlimAPI\Model\LinkByCalculationRequest $linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\LinkByCalculationRequest $linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCalculation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3923,11 +3923,11 @@ class KlimApi
     /**
      * Operation linkByCarbon
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest linkByCarbonRequest (optional)
-     * @param  string $locale locale (optional, default to 'DE')
-     * @param  string $currency currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCarbon'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3943,11 +3943,11 @@ class KlimApi
     /**
      * Operation linkByCarbonWithHttpInfo
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCarbon'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4069,11 +4069,11 @@ class KlimApi
     /**
      * Operation linkByCarbonAsync
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4092,11 +4092,11 @@ class KlimApi
     /**
      * Operation linkByCarbonAsyncWithHttpInfo
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4147,8 +4147,8 @@ class KlimApi
      * Create request for operation 'linkByCarbon'
      *
      * @param  \KlimAPI\Model\LinkByCarbonRequest $linkByCarbonRequest (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4248,11 +4248,11 @@ class KlimApi
     /**
      * Operation linkByPrice
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest linkByPriceRequest (optional)
-     * @param  string $locale locale (optional, default to 'DE')
-     * @param  string $currency currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByPrice'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4268,11 +4268,11 @@ class KlimApi
     /**
      * Operation linkByPriceWithHttpInfo
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByPrice'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4394,11 +4394,11 @@ class KlimApi
     /**
      * Operation linkByPriceAsync
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4417,11 +4417,11 @@ class KlimApi
     /**
      * Operation linkByPriceAsyncWithHttpInfo
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4472,8 +4472,8 @@ class KlimApi
      * Create request for operation 'linkByPrice'
      *
      * @param  \KlimAPI\Model\LinkByPriceRequest $linkByPriceRequest (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['linkByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4865,11 +4865,11 @@ class KlimApi
     /**
      * Operation orderByCalculation
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\OrderByCalculationRequest $orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale locale (optional, default to 'DE')
-     * @param  string $currency currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\OrderByCalculationRequest $orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCalculation'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4885,11 +4885,11 @@ class KlimApi
     /**
      * Operation orderByCalculationWithHttpInfo
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\OrderByCalculationRequest $orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\OrderByCalculationRequest $orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCalculation'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5011,11 +5011,11 @@ class KlimApi
     /**
      * Operation orderByCalculationAsync
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\OrderByCalculationRequest $orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\OrderByCalculationRequest $orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCalculation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5034,11 +5034,11 @@ class KlimApi
     /**
      * Operation orderByCalculationAsyncWithHttpInfo
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\OrderByCalculationRequest $orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\OrderByCalculationRequest $orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCalculation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5088,9 +5088,9 @@ class KlimApi
     /**
      * Create request for operation 'orderByCalculation'
      *
-     * @param  \KlimAPI\Model\OrderByCalculationRequest $orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\OrderByCalculationRequest $orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCalculation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5196,11 +5196,11 @@ class KlimApi
     /**
      * Operation orderByCarbon
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\BuyAmount $buyAmount buyAmount (optional)
-     * @param  string $locale locale (optional, default to 'DE')
-     * @param  string $currency currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCarbon'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5216,11 +5216,11 @@ class KlimApi
     /**
      * Operation orderByCarbonWithHttpInfo
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCarbon'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5342,11 +5342,11 @@ class KlimApi
     /**
      * Operation orderByCarbonAsync
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5365,11 +5365,11 @@ class KlimApi
     /**
      * Operation orderByCarbonAsyncWithHttpInfo
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5420,8 +5420,8 @@ class KlimApi
      * Create request for operation 'orderByCarbon'
      *
      * @param  \KlimAPI\Model\BuyAmount $buyAmount (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5521,11 +5521,11 @@ class KlimApi
     /**
      * Operation orderByPrice
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\BuyPrice $buyPrice buyPrice (optional)
-     * @param  string $locale locale (optional, default to 'DE')
-     * @param  string $currency currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByPrice'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5541,11 +5541,11 @@ class KlimApi
     /**
      * Operation orderByPriceWithHttpInfo
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByPrice'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5667,11 +5667,11 @@ class KlimApi
     /**
      * Operation orderByPriceAsync
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5690,11 +5690,11 @@ class KlimApi
     /**
      * Operation orderByPriceAsyncWithHttpInfo
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5745,8 +5745,8 @@ class KlimApi
      * Create request for operation 'orderByPrice'
      *
      * @param  \KlimAPI\Model\BuyPrice $buyPrice (optional)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5846,11 +5846,11 @@ class KlimApi
     /**
      * Operation pendingByCalculation
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\PendingByCalculationRequest $pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale locale (optional, default to 'DE')
-     * @param  string $currency currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\PendingByCalculationRequest $pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByCalculation'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5866,11 +5866,11 @@ class KlimApi
     /**
      * Operation pendingByCalculationWithHttpInfo
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\PendingByCalculationRequest $pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\PendingByCalculationRequest $pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByCalculation'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5992,11 +5992,11 @@ class KlimApi
     /**
      * Operation pendingByCalculationAsync
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\PendingByCalculationRequest $pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\PendingByCalculationRequest $pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByCalculation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6015,11 +6015,11 @@ class KlimApi
     /**
      * Operation pendingByCalculationAsyncWithHttpInfo
      *
-     * By calculation
+     * By Calculation
      *
-     * @param  \KlimAPI\Model\PendingByCalculationRequest $pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\PendingByCalculationRequest $pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByCalculation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6069,9 +6069,9 @@ class KlimApi
     /**
      * Create request for operation 'pendingByCalculation'
      *
-     * @param  \KlimAPI\Model\PendingByCalculationRequest $pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  \KlimAPI\Model\PendingByCalculationRequest $pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByCalculation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6177,11 +6177,11 @@ class KlimApi
     /**
      * Operation pendingByCarbon
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\PendingByCarbonRequest $pendingByCarbonRequest pendingByCarbonRequest (required)
-     * @param  string $locale locale (optional, default to 'DE')
-     * @param  string $currency currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByCarbon'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6197,11 +6197,11 @@ class KlimApi
     /**
      * Operation pendingByCarbonWithHttpInfo
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\PendingByCarbonRequest $pendingByCarbonRequest (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByCarbon'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6323,11 +6323,11 @@ class KlimApi
     /**
      * Operation pendingByCarbonAsync
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\PendingByCarbonRequest $pendingByCarbonRequest (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6346,11 +6346,11 @@ class KlimApi
     /**
      * Operation pendingByCarbonAsyncWithHttpInfo
      *
-     * By carbon
+     * By Carbon
      *
      * @param  \KlimAPI\Model\PendingByCarbonRequest $pendingByCarbonRequest (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6401,8 +6401,8 @@ class KlimApi
      * Create request for operation 'pendingByCarbon'
      *
      * @param  \KlimAPI\Model\PendingByCarbonRequest $pendingByCarbonRequest (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByCarbon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6508,11 +6508,11 @@ class KlimApi
     /**
      * Operation pendingByPrice
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\PendingByPriceRequest $pendingByPriceRequest pendingByPriceRequest (required)
-     * @param  string $locale locale (optional, default to 'DE')
-     * @param  string $currency currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByPrice'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6528,11 +6528,11 @@ class KlimApi
     /**
      * Operation pendingByPriceWithHttpInfo
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\PendingByPriceRequest $pendingByPriceRequest (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByPrice'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6654,11 +6654,11 @@ class KlimApi
     /**
      * Operation pendingByPriceAsync
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\PendingByPriceRequest $pendingByPriceRequest (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6677,11 +6677,11 @@ class KlimApi
     /**
      * Operation pendingByPriceAsyncWithHttpInfo
      *
-     * By price
+     * By Price
      *
      * @param  \KlimAPI\Model\PendingByPriceRequest $pendingByPriceRequest (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6732,8 +6732,8 @@ class KlimApi
      * Create request for operation 'pendingByPrice'
      *
      * @param  \KlimAPI\Model\PendingByPriceRequest $pendingByPriceRequest (required)
-     * @param  string $locale (optional, default to 'DE')
-     * @param  string $currency (optional, default to 'EUR')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
+     * @param  string $currency The currency of the returned offset price (optional, default to 'EUR')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pendingByPrice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6839,11 +6839,11 @@ class KlimApi
     /**
      * Operation process
      *
-     * Process pending Order
+     * Process Pending Order
      *
      * @param  \KlimAPI\Model\ProcessOrder $processOrder processOrder (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  string $locale locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['process'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6859,11 +6859,11 @@ class KlimApi
     /**
      * Operation processWithHttpInfo
      *
-     * Process pending Order
+     * Process Pending Order
      *
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['process'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6985,11 +6985,11 @@ class KlimApi
     /**
      * Operation processAsync
      *
-     * Process pending Order
+     * Process Pending Order
      *
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['process'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7008,11 +7008,11 @@ class KlimApi
     /**
      * Operation processAsyncWithHttpInfo
      *
-     * Process pending Order
+     * Process Pending Order
      *
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['process'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7064,7 +7064,7 @@ class KlimApi
      *
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['process'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7180,12 +7180,12 @@ class KlimApi
     /**
      * Operation processCart
      *
-     * Process cart
+     * Process Cart
      *
      * @param  \KlimAPI\Model\ProcessOrder $processOrder processOrder (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  string $locale locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['processCart'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -7201,12 +7201,12 @@ class KlimApi
     /**
      * Operation processCartWithHttpInfo
      *
-     * Process cart
+     * Process Cart
      *
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['processCart'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -7328,12 +7328,12 @@ class KlimApi
     /**
      * Operation processCartAsync
      *
-     * Process cart
+     * Process Cart
      *
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['processCart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7352,12 +7352,12 @@ class KlimApi
     /**
      * Operation processCartAsyncWithHttpInfo
      *
-     * Process cart
+     * Process Cart
      *
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['processCart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7408,9 +7408,9 @@ class KlimApi
      * Create request for operation 'processCart'
      *
      * @param  \KlimAPI\Model\ProcessOrder $processOrder (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $orderId The order id specified in the Order (required)
-     * @param  string $locale (optional, default to 'DE')
+     * @param  string $locale The locale in which the response should be returned (optional, default to 'DE')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['processCart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8011,7 +8011,7 @@ class KlimApi
      * Sync multiple Products
      *
      * @param  \KlimAPI\Model\Product[] $product product (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncBulkStore'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -8029,7 +8029,7 @@ class KlimApi
      * Sync multiple Products
      *
      * @param  \KlimAPI\Model\Product[] $product (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncBulkStore'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -8090,7 +8090,7 @@ class KlimApi
      * Sync multiple Products
      *
      * @param  \KlimAPI\Model\Product[] $product (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncBulkStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8112,7 +8112,7 @@ class KlimApi
      * Sync multiple Products
      *
      * @param  \KlimAPI\Model\Product[] $product (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncBulkStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8150,7 +8150,7 @@ class KlimApi
      * Create request for operation 'syncBulkStore'
      *
      * @param  \KlimAPI\Model\Product[] $product (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncBulkStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8264,7 +8264,7 @@ class KlimApi
      * Sync a single Product
      *
      * @param  \KlimAPI\Model\Product $product product (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncStore'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -8282,7 +8282,7 @@ class KlimApi
      * Sync a single Product
      *
      * @param  \KlimAPI\Model\Product $product (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncStore'] to see the possible values for this operation
      *
      * @throws \KlimAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -8343,7 +8343,7 @@ class KlimApi
      * Sync a single Product
      *
      * @param  \KlimAPI\Model\Product $product (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8365,7 +8365,7 @@ class KlimApi
      * Sync a single Product
      *
      * @param  \KlimAPI\Model\Product $product (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8403,7 +8403,7 @@ class KlimApi
      * Create request for operation 'syncStore'
      *
      * @param  \KlimAPI\Model\Product $product (required)
-     * @param  string $storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+     * @param  string $storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['syncStore'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

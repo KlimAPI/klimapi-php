@@ -57,7 +57,9 @@ class GetOrdersRequestFilters implements ModelInterface, ArrayAccess, \JsonSeria
         'recipientEmail' => 'string',
         'price' => 'float',
         'currency' => 'string',
-        'kgCO2e' => 'int'
+        'kgCO2e' => 'int',
+        'from' => '\DateTime',
+        'to' => '\DateTime'
     ];
 
     /**
@@ -74,7 +76,9 @@ class GetOrdersRequestFilters implements ModelInterface, ArrayAccess, \JsonSeria
         'recipientEmail' => null,
         'price' => null,
         'currency' => null,
-        'kgCO2e' => null
+        'kgCO2e' => null,
+        'from' => 'date-time',
+        'to' => 'date-time'
     ];
 
     /**
@@ -89,7 +93,9 @@ class GetOrdersRequestFilters implements ModelInterface, ArrayAccess, \JsonSeria
         'recipientEmail' => false,
         'price' => false,
         'currency' => false,
-        'kgCO2e' => false
+        'kgCO2e' => false,
+        'from' => false,
+        'to' => false
     ];
 
     /**
@@ -146,7 +152,9 @@ class GetOrdersRequestFilters implements ModelInterface, ArrayAccess, \JsonSeria
         'recipientEmail' => 'recipient_email',
         'price' => 'price',
         'currency' => 'currency',
-        'kgCO2e' => 'kgCO2e'
+        'kgCO2e' => 'kgCO2e',
+        'from' => 'from',
+        'to' => 'to'
     ];
 
     /**
@@ -161,7 +169,9 @@ class GetOrdersRequestFilters implements ModelInterface, ArrayAccess, \JsonSeria
         'recipientEmail' => 'setRecipientEmail',
         'price' => 'setPrice',
         'currency' => 'setCurrency',
-        'kgCO2e' => 'setKgCO2e'
+        'kgCO2e' => 'setKgCO2e',
+        'from' => 'setFrom',
+        'to' => 'setTo'
     ];
 
     /**
@@ -176,7 +186,9 @@ class GetOrdersRequestFilters implements ModelInterface, ArrayAccess, \JsonSeria
         'recipientEmail' => 'getRecipientEmail',
         'price' => 'getPrice',
         'currency' => 'getCurrency',
-        'kgCO2e' => 'getKgCO2e'
+        'kgCO2e' => 'getKgCO2e',
+        'from' => 'getFrom',
+        'to' => 'getTo'
     ];
 
     /**
@@ -220,7 +232,9 @@ class GetOrdersRequestFilters implements ModelInterface, ArrayAccess, \JsonSeria
         return self::$openAPIModelName;
     }
 
-    public const STATUS_PENDING = 'pending';
+    public const STATUS_OFFER = 'offer';
+    public const STATUS_PAYMENT_PENDING = 'payment_pending';
+    public const STATUS_OFFSET_PENDING = 'offset_pending';
     public const STATUS_PROCESSED = 'processed';
     public const STATUS_REFUNDED = 'refunded';
     public const CURRENCY_EUR = 'EUR';
@@ -343,7 +357,9 @@ class GetOrdersRequestFilters implements ModelInterface, ArrayAccess, \JsonSeria
     public function getStatusAllowableValues()
     {
         return [
-            self::STATUS_PENDING,
+            self::STATUS_OFFER,
+            self::STATUS_PAYMENT_PENDING,
+            self::STATUS_OFFSET_PENDING,
             self::STATUS_PROCESSED,
             self::STATUS_REFUNDED,
         ];
@@ -493,6 +509,8 @@ class GetOrdersRequestFilters implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('kgCO2e', $data ?? [], null);
+        $this->setIfExists('from', $data ?? [], null);
+        $this->setIfExists('to', $data ?? [], null);
     }
 
     /**
@@ -754,6 +772,60 @@ class GetOrdersRequestFilters implements ModelInterface, ArrayAccess, \JsonSeria
             throw new \InvalidArgumentException('non-nullable kgCO2e cannot be null');
         }
         $this->container['kgCO2e'] = $kgCO2e;
+
+        return $this;
+    }
+
+    /**
+     * Gets from
+     *
+     * @return \DateTime|null
+     */
+    public function getFrom()
+    {
+        return $this->container['from'];
+    }
+
+    /**
+     * Sets from
+     *
+     * @param \DateTime|null $from Specify a timeframe for your response in ISO 8601 format (UTC)
+     *
+     * @return self
+     */
+    public function setFrom($from)
+    {
+        if (is_null($from)) {
+            throw new \InvalidArgumentException('non-nullable from cannot be null');
+        }
+        $this->container['from'] = $from;
+
+        return $this;
+    }
+
+    /**
+     * Gets to
+     *
+     * @return \DateTime|null
+     */
+    public function getTo()
+    {
+        return $this->container['to'];
+    }
+
+    /**
+     * Sets to
+     *
+     * @param \DateTime|null $to Specify a timeframe for your response in ISO 8601 format (UTC)
+     *
+     * @return self
+     */
+    public function setTo($to)
+    {
+        if (is_null($to)) {
+            throw new \InvalidArgumentException('non-nullable to cannot be null');
+        }
+        $this->container['to'] = $to;
 
         return $this;
     }

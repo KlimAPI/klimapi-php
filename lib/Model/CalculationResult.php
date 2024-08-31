@@ -56,7 +56,9 @@ class CalculationResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'specification' => 'string',
         'detail' => 'string',
         'value' => 'float',
-        'unit' => 'string'
+        'unit' => 'string',
+        'emissionFactorId' => 'string',
+        'emissionFactorLastUpdated' => 'string'
     ];
 
     /**
@@ -73,7 +75,9 @@ class CalculationResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'specification' => null,
         'detail' => null,
         'value' => null,
-        'unit' => null
+        'unit' => null,
+        'emissionFactorId' => null,
+        'emissionFactorLastUpdated' => null
     ];
 
     /**
@@ -88,7 +92,9 @@ class CalculationResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'specification' => false,
         'detail' => false,
         'value' => false,
-        'unit' => false
+        'unit' => false,
+        'emissionFactorId' => false,
+        'emissionFactorLastUpdated' => false
     ];
 
     /**
@@ -145,7 +151,9 @@ class CalculationResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'specification' => 'specification',
         'detail' => 'detail',
         'value' => 'value',
-        'unit' => 'unit'
+        'unit' => 'unit',
+        'emissionFactorId' => 'emission_factor_id',
+        'emissionFactorLastUpdated' => 'emission_factor_last_updated'
     ];
 
     /**
@@ -160,7 +168,9 @@ class CalculationResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'specification' => 'setSpecification',
         'detail' => 'setDetail',
         'value' => 'setValue',
-        'unit' => 'setUnit'
+        'unit' => 'setUnit',
+        'emissionFactorId' => 'setEmissionFactorId',
+        'emissionFactorLastUpdated' => 'setEmissionFactorLastUpdated'
     ];
 
     /**
@@ -175,7 +185,9 @@ class CalculationResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         'specification' => 'getSpecification',
         'detail' => 'getDetail',
         'value' => 'getValue',
-        'unit' => 'getUnit'
+        'unit' => 'getUnit',
+        'emissionFactorId' => 'getEmissionFactorId',
+        'emissionFactorLastUpdated' => 'getEmissionFactorLastUpdated'
     ];
 
     /**
@@ -242,6 +254,8 @@ class CalculationResult implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('detail', $data ?? [], null);
         $this->setIfExists('value', $data ?? [], null);
         $this->setIfExists('unit', $data ?? [], null);
+        $this->setIfExists('emissionFactorId', $data ?? [], null);
+        $this->setIfExists('emissionFactorLastUpdated', $data ?? [], null);
     }
 
     /**
@@ -465,6 +479,60 @@ class CalculationResult implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable unit cannot be null');
         }
         $this->container['unit'] = $unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets emissionFactorId
+     *
+     * @return string|null
+     */
+    public function getEmissionFactorId()
+    {
+        return $this->container['emissionFactorId'];
+    }
+
+    /**
+     * Sets emissionFactorId
+     *
+     * @param string|null $emissionFactorId The unique identifier of the emission factor the calculation is based on
+     *
+     * @return self
+     */
+    public function setEmissionFactorId($emissionFactorId)
+    {
+        if (is_null($emissionFactorId)) {
+            throw new \InvalidArgumentException('non-nullable emissionFactorId cannot be null');
+        }
+        $this->container['emissionFactorId'] = $emissionFactorId;
+
+        return $this;
+    }
+
+    /**
+     * Gets emissionFactorLastUpdated
+     *
+     * @return string|null
+     */
+    public function getEmissionFactorLastUpdated()
+    {
+        return $this->container['emissionFactorLastUpdated'];
+    }
+
+    /**
+     * Sets emissionFactorLastUpdated
+     *
+     * @param string|null $emissionFactorLastUpdated ISO 8601 formatted timestamp of the latest update for the given emission factor
+     *
+     * @return self
+     */
+    public function setEmissionFactorLastUpdated($emissionFactorLastUpdated)
+    {
+        if (is_null($emissionFactorLastUpdated)) {
+            throw new \InvalidArgumentException('non-nullable emissionFactorLastUpdated cannot be null');
+        }
+        $this->container['emissionFactorLastUpdated'] = $emissionFactorLastUpdated;
 
         return $this;
     }

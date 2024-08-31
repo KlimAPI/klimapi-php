@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **weight** | **float** | The weight of the product | [optional]
 **weightUnit** | **string** | The weight unit of the product | [optional] [default to 'kg']
 **madeIn** | **string** | The country of origin of the product | [optional]
-**emissionFactor** | **string** | Already know the emissions of the given product? Then you can provide the emission factor here. Unit: **kg CO&lt;sub&gt;2&lt;/sub&gt;e** | [optional]
+**emissionFactor** | **string** | Already know the emissions of the given product? Then you can provide the emission factor here. Unit: **kg CO<sub>2</sub>e** | [optional]
 **emissionMultiplicator** | **string** | Include the multiplicator of the given factor. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

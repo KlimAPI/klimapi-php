@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **recipientEmail** | **string** | The recipient email of the orders you want to receive | [optional]
 **price** | **float** | The price of the orders you want to receive | [optional]
 **currency** | **string** | The currency of the orders you want to receive | [optional]
-**kgCO2e** | **int** | The amount of kg CO&lt;sub&gt;2&lt;/sub&gt;e of the orders you want to receive | [optional]
+**kgCO2e** | **int** | The amount of kg CO<sub>2</sub>e of the orders you want to receive | [optional]
+**from** | **\DateTime** | Specify a timeframe for your response in ISO 8601 format (UTC) | [optional]
+**to** | **\DateTime** | Specify a timeframe for your response in ISO 8601 format (UTC) | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

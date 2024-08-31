@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**calculationOptions** | **mixed[]** | An Array of [Calculation Options](/resources/factors). |
+**calculationOptions** | [**\KlimAPI\Model\PendingByCalculationRequestCalculationOptionsInner[]**](PendingByCalculationRequestCalculationOptionsInner.md) | An Array of [Calculation Options](https://klimapi.com/resources/factors). See the full list of supported options [here](https://klimapi.com/resources/factors). |
 **recipientName** | **string** | The name which should be associated with the compensation | [optional]
 **recipientEmail** | **string** | If a valid e-mail address is provided, we will send the certificate to this address | [optional]
 **sendAt** | **\DateTime** | Timestamp of when the certificate should be send to the customer in ISO 8601 format (UTC). Defaults to the current timestamp. | [optional]

@@ -55,7 +55,8 @@ class LinkByPriceRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'successUrl' => 'string',
         'cancelUrl' => 'string',
         'orderCount' => 'int',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'array<string,string>',
+        'paymentType' => 'string'
     ];
 
     /**
@@ -71,7 +72,8 @@ class LinkByPriceRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'successUrl' => null,
         'cancelUrl' => null,
         'orderCount' => null,
-        'metadata' => null
+        'metadata' => null,
+        'paymentType' => null
     ];
 
     /**
@@ -85,7 +87,8 @@ class LinkByPriceRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'successUrl' => false,
         'cancelUrl' => false,
         'orderCount' => false,
-        'metadata' => false
+        'metadata' => false,
+        'paymentType' => false
     ];
 
     /**
@@ -141,7 +144,8 @@ class LinkByPriceRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'successUrl' => 'success_url',
         'cancelUrl' => 'cancel_url',
         'orderCount' => 'order_count',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'paymentType' => 'payment_type'
     ];
 
     /**
@@ -155,7 +159,8 @@ class LinkByPriceRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'successUrl' => 'setSuccessUrl',
         'cancelUrl' => 'setCancelUrl',
         'orderCount' => 'setOrderCount',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'paymentType' => 'setPaymentType'
     ];
 
     /**
@@ -169,7 +174,8 @@ class LinkByPriceRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'successUrl' => 'getSuccessUrl',
         'cancelUrl' => 'getCancelUrl',
         'orderCount' => 'getOrderCount',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'paymentType' => 'getPaymentType'
     ];
 
     /**
@@ -213,6 +219,21 @@ class LinkByPriceRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
+    public const PAYMENT_TYPE__DEFAULT = 'default';
+    public const PAYMENT_TYPE_INVOICE = 'invoice';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPaymentTypeAllowableValues()
+    {
+        return [
+            self::PAYMENT_TYPE__DEFAULT,
+            self::PAYMENT_TYPE_INVOICE,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -235,6 +256,7 @@ class LinkByPriceRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('cancelUrl', $data ?? [], null);
         $this->setIfExists('orderCount', $data ?? [], 1);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('paymentType', $data ?? [], 'default');
     }
 
     /**
@@ -277,6 +299,15 @@ class LinkByPriceRequest implements ModelInterface, ArrayAccess, \JsonSerializab
 
         if (!is_null($this->container['orderCount']) && ($this->container['orderCount'] < 1)) {
             $invalidProperties[] = "invalid value for 'orderCount', must be bigger than or equal to 1.";
+        }
+
+        $allowedValues = $this->getPaymentTypeAllowableValues();
+        if (!is_null($this->container['paymentType']) && !in_array($this->container['paymentType'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'paymentType', must be one of '%s'",
+                $this->container['paymentType'],
+                implode("', '", $allowedValues)
+            );
         }
 
         return $invalidProperties;
@@ -465,6 +496,43 @@ class LinkByPriceRequest implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable metadata cannot be null');
         }
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentType
+     *
+     * @return string|null
+     */
+    public function getPaymentType()
+    {
+        return $this->container['paymentType'];
+    }
+
+    /**
+     * Sets paymentType
+     *
+     * @param string|null $paymentType With `default` we will automatically provide payment methods based on the customers location, use `invoice` to enable payment by invoice for the given link. Please note that `invoice` bank transfer is only available if **X-CURRENCY** is set to `EUR`. The invoice can always be paid by card.
+     *
+     * @return self
+     */
+    public function setPaymentType($paymentType)
+    {
+        if (is_null($paymentType)) {
+            throw new \InvalidArgumentException('non-nullable paymentType cannot be null');
+        }
+        $allowedValues = $this->getPaymentTypeAllowableValues();
+        if (!in_array($paymentType, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'paymentType', must be one of '%s'",
+                    $paymentType,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['paymentType'] = $paymentType;
 
         return $this;
     }

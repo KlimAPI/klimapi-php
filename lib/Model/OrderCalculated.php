@@ -249,6 +249,11 @@ class OrderCalculated implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const STATUS_OFFER = 'offer';
+    public const STATUS_PAYMENT_PENDING = 'payment_pending';
+    public const STATUS_OFFSET_PENDING = 'offset_pending';
+    public const STATUS_PROCESSED = 'processed';
+    public const STATUS_REFUNDED = 'refunded';
     public const CURRENCY_EUR = 'EUR';
     public const CURRENCY_USD = 'USD';
     public const CURRENCY_GBP = 'GBP';
@@ -360,6 +365,22 @@ class OrderCalculated implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CURRENCY_YER = 'YER';
     public const CURRENCY_ZAR = 'ZAR';
     public const CURRENCY_ZMW = 'ZMW';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_OFFER,
+            self::STATUS_PAYMENT_PENDING,
+            self::STATUS_OFFSET_PENDING,
+            self::STATUS_PROCESSED,
+            self::STATUS_REFUNDED,
+        ];
+    }
 
     /**
      * Gets allowable values of the enum
@@ -533,6 +554,15 @@ class OrderCalculated implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'status', must be one of '%s'",
+                $this->container['status'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getCurrencyAllowableValues();
         if (!is_null($this->container['currency']) && !in_array($this->container['currency'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -597,7 +627,7 @@ class OrderCalculated implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string|null $status status
+     * @param string|null $status The status of the order
      *
      * @return self
      */
@@ -605,6 +635,16 @@ class OrderCalculated implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         if (is_null($status)) {
             throw new \InvalidArgumentException('non-nullable status cannot be null');
+        }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'status', must be one of '%s'",
+                    $status,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['status'] = $status;
 

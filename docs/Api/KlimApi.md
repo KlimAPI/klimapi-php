@@ -58,7 +58,7 @@ Calculate
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
-$calculateRequest = new \KlimAPI\Model\CalculateRequest(); // \KlimAPI\Model\CalculateRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
+$calculateRequest = new \KlimAPI\Model\CalculateRequest(); // \KlimAPI\Model\CalculateRequest | Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
 
 $result = $klimapi->calculate($calculateRequest);
 ```
@@ -67,7 +67,7 @@ $result = $klimapi->calculate($calculateRequest);
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **calculateRequest** | [**\KlimAPI\Model\CalculateRequest**](../Model/CalculateRequest.md)| Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. | |
+| **calculateRequest** | [**\KlimAPI\Model\CalculateRequest**](../Model/CalculateRequest.md)| Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. | |
 
 ### Return type
 
@@ -99,9 +99,9 @@ Calculate
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $cartItem = array(new \KlimAPI\Model\CartItem()); // \KlimAPI\Model\CartItem[]
-$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
-$locale = 'DE'; // string
-$currency = 'EUR'; // string
+$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
+$locale = 'DE'; // string | The locale in which the response should be returned
+$currency = 'EUR'; // string | The currency of the returned offset price
 
 $result = $klimapi->calculateCart($cartItem, $storeIdent, $locale, $currency);
 ```
@@ -111,9 +111,9 @@ $result = $klimapi->calculateCart($cartItem, $storeIdent, $locale, $currency);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **cartItem** | [**\KlimAPI\Model\CartItem[]**](../Model/CartItem.md)|  | |
-| **storeIdent** | **string**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
-| **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
+| **storeIdent** | **string**| Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident | |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
+| **currency** | **string**| The currency of the returned offset price | [optional] [default to &#39;EUR&#39;] |
 
 ### Return type
 
@@ -144,7 +144,7 @@ Use the method to get all activated categories for the given API key.
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
-$locale = 'DE'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
 
 $result = $klimapi->getCategories($locale);
 ```
@@ -153,7 +153,7 @@ $result = $klimapi->getCategories($locale);
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
 
 ### Return type
 
@@ -176,7 +176,7 @@ getCertificationAuthorities(): \KlimAPI\Model\CertificationAuthority[]
 
 Get all Certification Authorities
 
-Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](/portfolio).
+Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](https://klimapi.com/portfolio).
 
 ### Example
 
@@ -262,7 +262,7 @@ Here you can request information about a specific Order.
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $orderId = 'orderId_example'; // string | You can get the order_id from several endpoints, for example when creating an Order.
-$locale = 'DE'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
 
 $result = $klimapi->getOrder($orderId, $locale);
 ```
@@ -272,7 +272,7 @@ $result = $klimapi->getOrder($orderId, $locale);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **orderId** | **string**| You can get the order_id from several endpoints, for example when creating an Order. | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
 
 ### Return type
 
@@ -304,7 +304,7 @@ Query all orders
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $getOrdersRequest = new \KlimAPI\Model\GetOrdersRequest(); // \KlimAPI\Model\GetOrdersRequest | 
-$locale = 'DE'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
 
 $result = $klimapi->getOrders($getOrdersRequest, $locale);
 ```
@@ -314,7 +314,7 @@ $result = $klimapi->getOrders($getOrdersRequest, $locale);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **getOrdersRequest** | [**\KlimAPI\Model\GetOrdersRequest**](../Model/GetOrdersRequest.md)|  | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
 
 ### Return type
 
@@ -345,8 +345,8 @@ Here you can request information about a specific Checkout Link.
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
-$paymentLinkId = 'paymentLinkId_example'; // string
-$locale = 'DE'; // string
+$paymentLinkId = 'paymentLinkId_example'; // string | The identifier of the checkout link that you want to be returned.
+$locale = 'DE'; // string | The locale in which the response should be returned
 
 $result = $klimapi->getPaymentLink($paymentLinkId, $locale);
 ```
@@ -355,8 +355,8 @@ $result = $klimapi->getPaymentLink($paymentLinkId, $locale);
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **paymentLinkId** | **string**|  | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
+| **paymentLinkId** | **string**| The identifier of the checkout link that you want to be returned. | |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
 
 ### Return type
 
@@ -388,7 +388,7 @@ Here you can request information to every project in our database.
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $projectId = 'projectId_example'; // string | You can get the project_id from several endpoints, for example when creating an Order.
-$locale = 'DE'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
 
 $result = $klimapi->getProject($projectId, $locale);
 ```
@@ -398,7 +398,7 @@ $result = $klimapi->getProject($projectId, $locale);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **projectId** | **string**| You can get the project_id from several endpoints, for example when creating an Order. | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
 
 ### Return type
 
@@ -429,7 +429,7 @@ Get all projects you supported with the given API key.
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
-$locale = 'DE'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
 
 $result = $klimapi->getProjects($locale);
 ```
@@ -438,7 +438,7 @@ $result = $klimapi->getProjects($locale);
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
 
 ### Return type
 
@@ -459,7 +459,7 @@ $result = $klimapi->getProjects($locale);
 linkByCalculation($linkByCalculationRequest, $locale, $currency): \KlimAPI\Model\CheckoutLinksCalculated
 ```
 
-By calculation
+By Calculation
 
 **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
@@ -469,9 +469,9 @@ By calculation
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
-$linkByCalculationRequest = new \KlimAPI\Model\LinkByCalculationRequest(); // \KlimAPI\Model\LinkByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
-$locale = 'DE'; // string
-$currency = 'EUR'; // string
+$linkByCalculationRequest = new \KlimAPI\Model\LinkByCalculationRequest(); // \KlimAPI\Model\LinkByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
+$locale = 'DE'; // string | The locale in which the response should be returned
+$currency = 'EUR'; // string | The currency of the returned offset price
 
 $result = $klimapi->linkByCalculation($linkByCalculationRequest, $locale, $currency);
 ```
@@ -480,9 +480,9 @@ $result = $klimapi->linkByCalculation($linkByCalculationRequest, $locale, $curre
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **linkByCalculationRequest** | [**\KlimAPI\Model\LinkByCalculationRequest**](../Model/LinkByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
-| **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
+| **linkByCalculationRequest** | [**\KlimAPI\Model\LinkByCalculationRequest**](../Model/LinkByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. | |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
+| **currency** | **string**| The currency of the returned offset price | [optional] [default to &#39;EUR&#39;] |
 
 ### Return type
 
@@ -503,7 +503,7 @@ $result = $klimapi->linkByCalculation($linkByCalculationRequest, $locale, $curre
 linkByCarbon($linkByCarbonRequest, $locale, $currency): \KlimAPI\Model\CheckoutLinks
 ```
 
-By carbon
+By Carbon
 
 Get the compensation instantly by kilogram CO2e.
 
@@ -514,8 +514,8 @@ Get the compensation instantly by kilogram CO2e.
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $linkByCarbonRequest = new \KlimAPI\Model\LinkByCarbonRequest(); // \KlimAPI\Model\LinkByCarbonRequest
-$locale = 'DE'; // string
-$currency = 'EUR'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
+$currency = 'EUR'; // string | The currency of the returned offset price
 
 $result = $klimapi->linkByCarbon($linkByCarbonRequest, $locale, $currency);
 ```
@@ -525,8 +525,8 @@ $result = $klimapi->linkByCarbon($linkByCarbonRequest, $locale, $currency);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **linkByCarbonRequest** | [**\KlimAPI\Model\LinkByCarbonRequest**](../Model/LinkByCarbonRequest.md)|  | [optional] |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
-| **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
+| **currency** | **string**| The currency of the returned offset price | [optional] [default to &#39;EUR&#39;] |
 
 ### Return type
 
@@ -547,7 +547,7 @@ $result = $klimapi->linkByCarbon($linkByCarbonRequest, $locale, $currency);
 linkByPrice($linkByPriceRequest, $locale, $currency): \KlimAPI\Model\CheckoutLinks
 ```
 
-By price
+By Price
 
 Get the compensation instantly by price.
 
@@ -558,8 +558,8 @@ Get the compensation instantly by price.
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $linkByPriceRequest = new \KlimAPI\Model\LinkByPriceRequest(); // \KlimAPI\Model\LinkByPriceRequest
-$locale = 'DE'; // string
-$currency = 'EUR'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
+$currency = 'EUR'; // string | The currency of the returned offset price
 
 $result = $klimapi->linkByPrice($linkByPriceRequest, $locale, $currency);
 ```
@@ -569,8 +569,8 @@ $result = $klimapi->linkByPrice($linkByPriceRequest, $locale, $currency);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **linkByPriceRequest** | [**\KlimAPI\Model\LinkByPriceRequest**](../Model/LinkByPriceRequest.md)|  | [optional] |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
-| **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
+| **currency** | **string**| The currency of the returned offset price | [optional] [default to &#39;EUR&#39;] |
 
 ### Return type
 
@@ -628,7 +628,7 @@ This endpoint does not need any parameter.
 orderByCalculation($orderByCalculationRequest, $locale, $currency): \KlimAPI\Model\OrderCalculated
 ```
 
-By calculation
+By Calculation
 
 **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
@@ -638,9 +638,9 @@ By calculation
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
-$orderByCalculationRequest = new \KlimAPI\Model\OrderByCalculationRequest(); // \KlimAPI\Model\OrderByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
-$locale = 'DE'; // string
-$currency = 'EUR'; // string
+$orderByCalculationRequest = new \KlimAPI\Model\OrderByCalculationRequest(); // \KlimAPI\Model\OrderByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
+$locale = 'DE'; // string | The locale in which the response should be returned
+$currency = 'EUR'; // string | The currency of the returned offset price
 
 $result = $klimapi->orderByCalculation($orderByCalculationRequest, $locale, $currency);
 ```
@@ -649,9 +649,9 @@ $result = $klimapi->orderByCalculation($orderByCalculationRequest, $locale, $cur
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **orderByCalculationRequest** | [**\KlimAPI\Model\OrderByCalculationRequest**](../Model/OrderByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
-| **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
+| **orderByCalculationRequest** | [**\KlimAPI\Model\OrderByCalculationRequest**](../Model/OrderByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. | |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
+| **currency** | **string**| The currency of the returned offset price | [optional] [default to &#39;EUR&#39;] |
 
 ### Return type
 
@@ -672,7 +672,7 @@ $result = $klimapi->orderByCalculation($orderByCalculationRequest, $locale, $cur
 orderByCarbon($buyAmount, $locale, $currency): \KlimAPI\Model\Order
 ```
 
-By carbon
+By Carbon
 
 Get the compensation instantly by kilogram CO2e. For this route the API key has no limits.
 
@@ -683,8 +683,8 @@ Get the compensation instantly by kilogram CO2e. For this route the API key has 
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $buyAmount = new \KlimAPI\Model\BuyAmount(); // \KlimAPI\Model\BuyAmount
-$locale = 'DE'; // string
-$currency = 'EUR'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
+$currency = 'EUR'; // string | The currency of the returned offset price
 
 $result = $klimapi->orderByCarbon($buyAmount, $locale, $currency);
 ```
@@ -694,8 +694,8 @@ $result = $klimapi->orderByCarbon($buyAmount, $locale, $currency);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **buyAmount** | [**\KlimAPI\Model\BuyAmount**](../Model/BuyAmount.md)|  | [optional] |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
-| **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
+| **currency** | **string**| The currency of the returned offset price | [optional] [default to &#39;EUR&#39;] |
 
 ### Return type
 
@@ -716,7 +716,7 @@ $result = $klimapi->orderByCarbon($buyAmount, $locale, $currency);
 orderByPrice($buyPrice, $locale, $currency): \KlimAPI\Model\Order
 ```
 
-By price
+By Price
 
 Get the compensation instantly by price. For this route the API key has no limits.
 
@@ -727,8 +727,8 @@ Get the compensation instantly by price. For this route the API key has no limit
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $buyPrice = new \KlimAPI\Model\BuyPrice(); // \KlimAPI\Model\BuyPrice
-$locale = 'DE'; // string
-$currency = 'EUR'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
+$currency = 'EUR'; // string | The currency of the returned offset price
 
 $result = $klimapi->orderByPrice($buyPrice, $locale, $currency);
 ```
@@ -738,8 +738,8 @@ $result = $klimapi->orderByPrice($buyPrice, $locale, $currency);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **buyPrice** | [**\KlimAPI\Model\BuyPrice**](../Model/BuyPrice.md)|  | [optional] |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
-| **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
+| **currency** | **string**| The currency of the returned offset price | [optional] [default to &#39;EUR&#39;] |
 
 ### Return type
 
@@ -760,7 +760,7 @@ $result = $klimapi->orderByPrice($buyPrice, $locale, $currency);
 pendingByCalculation($pendingByCalculationRequest, $locale, $currency): \KlimAPI\Model\PendingOrdersCalculated
 ```
 
-By calculation
+By Calculation
 
 **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
@@ -770,9 +770,9 @@ By calculation
 <?php
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
-$pendingByCalculationRequest = new \KlimAPI\Model\PendingByCalculationRequest(); // \KlimAPI\Model\PendingByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
-$locale = 'DE'; // string
-$currency = 'EUR'; // string
+$pendingByCalculationRequest = new \KlimAPI\Model\PendingByCalculationRequest(); // \KlimAPI\Model\PendingByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
+$locale = 'DE'; // string | The locale in which the response should be returned
+$currency = 'EUR'; // string | The currency of the returned offset price
 
 $result = $klimapi->pendingByCalculation($pendingByCalculationRequest, $locale, $currency);
 ```
@@ -781,9 +781,9 @@ $result = $klimapi->pendingByCalculation($pendingByCalculationRequest, $locale, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pendingByCalculationRequest** | [**\KlimAPI\Model\PendingByCalculationRequest**](../Model/PendingByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
-| **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
+| **pendingByCalculationRequest** | [**\KlimAPI\Model\PendingByCalculationRequest**](../Model/PendingByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. | |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
+| **currency** | **string**| The currency of the returned offset price | [optional] [default to &#39;EUR&#39;] |
 
 ### Return type
 
@@ -804,7 +804,7 @@ $result = $klimapi->pendingByCalculation($pendingByCalculationRequest, $locale, 
 pendingByCarbon($pendingByCarbonRequest, $locale, $currency): \KlimAPI\Model\PendingOrders
 ```
 
-By carbon
+By Carbon
 
 Here you can create an Order by kilogram CO2e. Please note the request limits of your API key, normally it is 15000kg per request. We are happy to increase the limits on request, please write us a message.
 
@@ -815,8 +815,8 @@ Here you can create an Order by kilogram CO2e. Please note the request limits of
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $pendingByCarbonRequest = new \KlimAPI\Model\PendingByCarbonRequest(); // \KlimAPI\Model\PendingByCarbonRequest
-$locale = 'DE'; // string
-$currency = 'EUR'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
+$currency = 'EUR'; // string | The currency of the returned offset price
 
 $result = $klimapi->pendingByCarbon($pendingByCarbonRequest, $locale, $currency);
 ```
@@ -826,8 +826,8 @@ $result = $klimapi->pendingByCarbon($pendingByCarbonRequest, $locale, $currency)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pendingByCarbonRequest** | [**\KlimAPI\Model\PendingByCarbonRequest**](../Model/PendingByCarbonRequest.md)|  | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
-| **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
+| **currency** | **string**| The currency of the returned offset price | [optional] [default to &#39;EUR&#39;] |
 
 ### Return type
 
@@ -848,7 +848,7 @@ $result = $klimapi->pendingByCarbon($pendingByCarbonRequest, $locale, $currency)
 pendingByPrice($pendingByPriceRequest, $locale, $currency): \KlimAPI\Model\PendingOrders
 ```
 
-By price
+By Price
 
 Here you can create an Order by price. Please note the request limits of your API key, normally it is 250€ per request. We are happy to increase the limits on request, please write us a message.
 
@@ -859,8 +859,8 @@ Here you can create an Order by price. Please note the request limits of your AP
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $pendingByPriceRequest = new \KlimAPI\Model\PendingByPriceRequest(); // \KlimAPI\Model\PendingByPriceRequest
-$locale = 'DE'; // string
-$currency = 'EUR'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
+$currency = 'EUR'; // string | The currency of the returned offset price
 
 $result = $klimapi->pendingByPrice($pendingByPriceRequest, $locale, $currency);
 ```
@@ -870,8 +870,8 @@ $result = $klimapi->pendingByPrice($pendingByPriceRequest, $locale, $currency);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pendingByPriceRequest** | [**\KlimAPI\Model\PendingByPriceRequest**](../Model/PendingByPriceRequest.md)|  | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
-| **currency** | **string**|  | [optional] [default to &#39;EUR&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
+| **currency** | **string**| The currency of the returned offset price | [optional] [default to &#39;EUR&#39;] |
 
 ### Return type
 
@@ -892,7 +892,7 @@ $result = $klimapi->pendingByPrice($pendingByPriceRequest, $locale, $currency);
 process($processOrder, $orderId, $locale): \KlimAPI\Model\Order
 ```
 
-Process pending Order
+Process Pending Order
 
 You accepted the given order. You may now show a confirmation or provide the link to the certificate.
 
@@ -904,7 +904,7 @@ $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $processOrder = new \KlimAPI\Model\ProcessOrder(); // \KlimAPI\Model\ProcessOrder
 $orderId = 'orderId_example'; // string | The order id specified in the Order
-$locale = 'DE'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
 
 $result = $klimapi->process($processOrder, $orderId, $locale);
 ```
@@ -915,7 +915,7 @@ $result = $klimapi->process($processOrder, $orderId, $locale);
 | ------------- | ------------- | ------------- | ------------- |
 | **processOrder** | [**\KlimAPI\Model\ProcessOrder**](../Model/ProcessOrder.md)|  | |
 | **orderId** | **string**| The order id specified in the Order | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
 
 ### Return type
 
@@ -936,9 +936,9 @@ $result = $klimapi->process($processOrder, $orderId, $locale);
 processCart($processOrder, $storeIdent, $orderId, $locale): \KlimAPI\Model\Order
 ```
 
-Process cart
+Process Cart
 
-
+Process a given cart to offset the cart's emissions
 
 ### Example
 
@@ -947,9 +947,9 @@ Process cart
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $processOrder = new \KlimAPI\Model\ProcessOrder(); // \KlimAPI\Model\ProcessOrder
-$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
 $orderId = 'orderId_example'; // string | The order id specified in the Order
-$locale = 'DE'; // string
+$locale = 'DE'; // string | The locale in which the response should be returned
 
 $result = $klimapi->processCart($processOrder, $storeIdent, $orderId, $locale);
 ```
@@ -959,9 +959,9 @@ $result = $klimapi->processCart($processOrder, $storeIdent, $orderId, $locale);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **processOrder** | [**\KlimAPI\Model\ProcessOrder**](../Model/ProcessOrder.md)|  | |
-| **storeIdent** | **string**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident | |
+| **storeIdent** | **string**| Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident | |
 | **orderId** | **string**| The order id specified in the Order | |
-| **locale** | **string**|  | [optional] [default to &#39;DE&#39;] |
+| **locale** | **string**| The locale in which the response should be returned | [optional] [default to &#39;DE&#39;] |
 
 ### Return type
 
@@ -1073,7 +1073,7 @@ Use the method to sync multiple products from the given store to our database.
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $product = array(new \KlimAPI\Model\Product()); // \KlimAPI\Model\Product[]
-$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
 
 $klimapi->syncBulkStore($product, $storeIdent);
 ```
@@ -1083,7 +1083,7 @@ $klimapi->syncBulkStore($product, $storeIdent);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **product** | [**\KlimAPI\Model\Product[]**](../Model/Product.md)|  | |
-| **storeIdent** | **string**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident | |
+| **storeIdent** | **string**| Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident | |
 
 ### Return type
 
@@ -1115,7 +1115,7 @@ Use the method to sync a single product from the given store to our database.
 $klimapi = new KlimAPI\Api\KlimApi('your-private-api-key');
 
 $product = new \KlimAPI\Model\Product(); // \KlimAPI\Model\Product
-$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+$storeIdent = 'storeIdent_example'; // string | Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
 
 $klimapi->syncStore($product, $storeIdent);
 ```
@@ -1125,7 +1125,7 @@ $klimapi->syncStore($product, $storeIdent);
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **product** | [**\KlimAPI\Model\Product**](../Model/Product.md)|  | |
-| **storeIdent** | **string**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident | |
+| **storeIdent** | **string**| Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident | |
 
 ### Return type
 
